@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Welcome to my new site!"
+title: "Welcome to my new site - This is my first post!"
 date: 2020-09-14 14:37:43 +0300
 background: '/img/bg-post.jpg'
 categories: technology
