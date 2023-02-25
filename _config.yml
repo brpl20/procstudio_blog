@@ -1,16 +1,10 @@
+domain: brpl20.github.io
+url: https://brpl20.github.io
+
 title: Pellizzetti Blog
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Adicionando uma descrição para exibir na página home.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+description: Adicionando uma descrição para exibir na página home.
 
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
-
-# Build settings
 markdown:           kramdown
 paginate:           5
 paginate_path:      "/posts/page:num/"
@@ -18,4 +12,4 @@ theme: jekyll-theme-clean-blog
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-sitemap
