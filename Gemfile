@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # gem 'jekyll', '~> 4.3.2'
-gem 'jekyll-theme-clean-blog'
+# gem 'jekyll-theme-clean-blog'
 
 group :jekyll_plugins do
   gem 'github-pages'
