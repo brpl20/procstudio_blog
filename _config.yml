@@ -1,9 +1,9 @@
 domain: brpl20.github.io
 url: https://brpl20.github.io
 
-title: Pellizzetti Blog
-email: your-email@example.com
-description: Adicionando uma descrição para exibir na página home.
+title: ProcStudio Blog
+email: ProcStudio Contatocontato@procstudio.com.br
+description: Sistema de gerenciamento escritório e automatização de documentos.
 
 markdown:           kramdown
 paginate:           5
