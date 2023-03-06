@@ -1,4 +1,5 @@
 ---
+permalink: /um_sistema_inovador
 layout: post
 title: "ProcStudio, um sistema inovador"
 date: 2023-01-03 14:37:43 +0300
