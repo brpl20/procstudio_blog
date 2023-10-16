@@ -1,31 +1,22 @@
 **Como elaborar uma petição inicial?**
 
-Quando se trata de buscar justiça e resolver questões legais, a petição
-inicial é o ponto de partida essencial.
+Quando se trata de buscar justiça e resolver questões legais, a petição inicial é o ponto de partida essencial.
 
-Ela é como a primeira impressão que você apresenta ao sistema
-judiciário, delineando de forma clara e objetiva o seu caso.
+Ela é como a primeira impressão que você apresenta ao sistema judiciário, delineando de forma clara e objetiva o seu caso.
 
-Elaborar uma petição inicial bem estruturada é fundamental para garantir
-que suas alegações sejam entendidas e consideradas pela corte.
+Elaborar uma petição inicial bem estruturada é fundamental para garantir que suas alegações sejam entendidas e consideradas pela corte.
 
-Neste artigo, vamos explorar os elementos-chave para criar uma petição
-inicial sólida e eficaz, desde a formatação até a escolha das palavras.
+Neste artigo, vamos explorar os elementos-chave para criar uma petição inicial sólida e eficaz, desde a formatação até a escolha das palavras.
 
-Vamos mergulhar neste processo sem complicação, usando uma linguagem
-simples para que você possa compreender e aplicar cada etapa com
-confiança.
+Vamos mergulhar neste processo sem complicação, usando uma linguagem simples para que você possa compreender e aplicar cada etapa com confiança.
 
-Lembre-se, a petição inicial é a fundação do seu caso legal, por isso é
-importante construí-la com cuidado e atenção.
+Lembre-se, a petição inicial é a fundação do seu caso legal, por isso é importante construí-la com cuidado e atenção.
 
-Agora, vamos avançar para entender os passos cruciais para elaborar uma
-petição inicial convincente e persuasiva.
+Agora, vamos avançar para entender os passos cruciais para elaborar uma petição inicial convincente e persuasiva.
 
 Importância da petição inicial no processo judicial
 
-A petição inicial desempenha um papel crucial no sistema judicial, pois
-é o ponto de partida para qualquer processo legal.
+A petição inicial desempenha um papel crucial no sistema judicial, pois é o ponto de partida para qualquer processo legal.
 
 Ela é o documento através do qual o autor apresenta sua demanda perante
 o tribunal, delineando os fatos, argumentos jurídicos e pedidos que
