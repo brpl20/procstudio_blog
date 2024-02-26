@@ -1,4 +1,13 @@
-**Advogado pode ser MEI ?**
+---
+permalink: /advogado-pode-ser-mei
+layout: post
+title: "Advogado Pode Ser MEI?"
+date: 2023-01-03 14:37:43 +0300
+background: '/img/bg-post.jpg'
+categories: contabil
+---
+
+# Advogado pode ser MEI ?
 
 Depois de obter a licença da Ordem dos Advogados do Brasil, uma das questões cruciais é a formalização.
 

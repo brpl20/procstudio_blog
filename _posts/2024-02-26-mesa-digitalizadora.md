@@ -3,12 +3,15 @@ permalink: /mesa_digitalizadora_CTPS
 layout: post
 published: true
 title: "Mesa Digitalizadora CTPS"
-date: 2024-02-026 14:37:43 +0300
+date: 2024-02-26 14:37:43 +0300
 background: '/img/bg-post.jpg'
 categories: tecnologia
 ---
 
-# Mesa Digitalizadora
+# campanha 
+--- não tenha medo da sua gambiarra --- 
+
+# Mesa Digitalizadora de CTPS
 Logo de início percebe-se que não é bem uma mesa. Mas uma caixa. Uma caixa de acrílico. 
 
 Muitos clientes me perguntam, o que é isso? 

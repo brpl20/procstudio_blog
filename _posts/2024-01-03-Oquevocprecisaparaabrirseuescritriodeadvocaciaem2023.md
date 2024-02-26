@@ -1,4 +1,13 @@
-**O que você precisa para abrir seu escritório de advocacia em 2023?**
+---
+permalink: /o-que-voce-precisa-para-abrir-seu-escritorio-de-advocacia-em-2024
+layout: post
+title: "O que você precisa para abrir seu escritório de advocacia em 2024?"
+date: 2024-01-03 14:37:43 +0300
+background: '/img/bg-post.jpg'
+categories: pratica
+---
+
+O que você precisa para abrir seu escritório de advocacia em 2024?
 
 Com o cenário jurídico em constante evolução, abrir um escritório de advocacia em 2023 representa uma oportunidade estratégica.
 

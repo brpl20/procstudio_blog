@@ -1,4 +1,13 @@
-**5 Dicas matadoras para elaborar uma petição inicial**
+---
+permalink: /5_dicas_matadoras_para_elaborar_uma_peticao_inicial
+layout: post
+title: "5 Dicas matadoras para elaborar uma petição inicial"
+date: 2023-01-03 14:37:43 +0300
+background: '/img/bg-post.jpg'
+categories: pratica
+---
+
+# 5 Dicas matadoras para elaborar uma petição inicial
 
  Elaborar uma petição inicial eficaz é crucial para garantir o sucesso de um processo legal.
 

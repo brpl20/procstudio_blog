@@ -1,4 +1,14 @@
-# Certificado digital, como escolher?
+---
+permalink: /certificado-digital-para-advogado-como-escolher
+layout: post
+published: false 
+title: "Certificado digital para advogado, como escolher?"
+date: 2024-02-04 14:37:43 +0300
+background: '/img/bg-post.jpg'
+categories: tecnologia
+---
+
+# Certificado digital para advogado, como escolher?
 
 No cotidiano, advogados se deparam com uma vasta quantidade de papéis que necessitam ser rubricados, despachados e catalogados. 
 

@@ -1,3 +1,12 @@
+---
+permalink: /consegui-meu-primeiro-cliente-e-agora
+layout: post
+title: "Consegui meu primeiro cliente, e agora?"
+date: 2023-01-03 14:37:43 +0300
+background: '/img/bg-post.jpg'
+categories: pratica
+---
+
 **Consegui meu primeiro cliente, e agora?**
 
 Parabéns! Você conquistou o seu primeiro cliente como advogado, e esse é um marco emocionante em sua jornada profissional.

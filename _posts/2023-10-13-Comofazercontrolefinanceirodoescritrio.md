@@ -1,4 +1,13 @@
-**Como fazer controle financeiro do escritório de advocacia?**
+---
+permalink: /como-fazer-controle-financeiro-do-escritório-de-advocacia
+layout: post
+title: "Como elaborar uma petição inicial??"
+date: 2023-01-03 14:37:43 +0300
+background: '/img/bg-post.jpg'
+categories: financeiro
+---
+
+# Como fazer controle financeiro do escritório de advocacia?
 
 A importância do controle financeiro em escritórios de advocacia é um aspecto crucial para o sucesso e a estabilidade do negócio.
 
