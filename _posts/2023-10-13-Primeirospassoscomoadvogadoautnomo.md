@@ -2,7 +2,7 @@
 permalink: /primeiros-passos-como-advogado-autônomo
 layout: post
 title: "Primeiros passos como advogado autônomo"
-date: 2023-01-03 14:37:43 +0300
+date: 2023-10-13 14:37:43 +0300
 background: '/img/bg-post.jpg'
 categories: pratica
 ---

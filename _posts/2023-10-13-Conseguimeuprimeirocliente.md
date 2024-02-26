@@ -2,7 +2,7 @@
 permalink: /consegui-meu-primeiro-cliente-e-agora
 layout: post
 title: "Consegui meu primeiro cliente, e agora?"
-date: 2023-01-03 14:37:43 +0300
+date: 2023-10-13 14:37:43 +0300
 background: '/img/bg-post.jpg'
 categories: pratica
 ---
