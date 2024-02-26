@@ -7,7 +7,5 @@ background: '/img/bg-post.jpg'
 categories: technology
 ---
 
-
----
 # ProcStudio
 Um novo conceito de trabalho, feito de advogado para advogado, com o objetivo de facilitar o gerencimento do escritório, considerando todas as rotinas do advogado e também focando no gerenciamento e bom atendimento do cliente. mas também do cliente e das
