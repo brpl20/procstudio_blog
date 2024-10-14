@@ -48,6 +48,15 @@ Implementar um webhook do GitHub para notificar sobre alterações nos arquivos 
 - Pessoa Física
 - Pessoa Jurídica
 - Contador
+- Representante Legal
+
+#### Cadastrando uma Pessoa Física
+
+#### Cadastrando uma Pessoa Jurídica
+
+#### Cadastrando um Contador
+
+#### Cadastrando um Representante Legal
 
 ### Capacidade Civil
 - Capaz
@@ -72,29 +81,14 @@ Monitoramento de alterações:
 Criar um job que verifica diariamente as alterações nos modelos e controladores relacionados aos clientes.
 </div>
 
+
 ## Gestão de Trabalhos
 
-### Cadastro de Processos Jurídicos
+### Cadastro de Trabalhos (Processos Administrativos e Judiciais)
 - Informações do cliente
 - Dados do processo
 - Poderes concedidos
 - Associação com o escritório de advocacia
-
-### Parceiros
-- Cadastro de parceiros
-- Associação de parceiros a processos
-
-<div class="dev-info">
-Arquivos relacionados:
-<ul>
-<li>app/models/work.rb</li>
-<li>app/controllers/works_controller.rb</li>
-<li>app/views/works/*</li>
-</ul>
-
-Monitoramento de alterações:
-Implementar um listener para alterações no modelo Work e seus relacionamentos.
-</div>
 
 ## Documentos Legais
 
@@ -199,23 +193,6 @@ Implementar um sistema de log para registrar todas as alterações nas tarefas e
 ## Atuação em Conjunto
 
 O sistema permite o registro e gerenciamento de atuações em conjunto com outros advogados ou escritórios.
-
-### Como Registrar Atuação em Conjunto
-1. Selecione o processo
-2. Adicione os advogados ou escritórios parceiros
-3. Defina as responsabilidades de cada parte
-
-<div class="dev-info">
-Arquivos relacionados:
-<ul>
-<li>app/models/job_work.rb</li>
-<li>app/controllers/job_works_controller.rb</li>
-<li>app/views/job_works/*</li>
-</ul>
-
-Monitoramento de alterações:
-Criar um sistema de notificações para informar todos os envolvidos sobre alterações em atuações conjuntas.
-</div>
 
 ## Suporte
 
