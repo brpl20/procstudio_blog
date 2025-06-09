@@ -1,2 +1,28 @@
 // Import Core Clean Blog SCSS
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
+
+
+.btn-primary {
+  background-color: #0277EE !important;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #0e70d1 !important;
+  }
+}
+
+.post-preview a{
+    color: #000000de;
+
+    &:hover {
+    color: #0277EE;
+  }
+}
+
+.navbar {
+  background-color: #01013D !important; 
+}
+.nav-link{
+  color: #FEFEFA !important;
+}
