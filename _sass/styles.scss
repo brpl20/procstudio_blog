@@ -14,7 +14,6 @@
 
 .post-preview a{
     color: #000000de;
-
     &:hover {
     color: #0277EE;
   }
@@ -25,4 +24,16 @@
 }
 .nav-link{
   color: #FEFEFA !important;
+}
+
+.container{
+  height: auto !important;
+}
+
+.row{
+  margin-top: 40px !important;
+}
+nav{
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-size: 18px;
 }
