@@ -1,0 +1,170 @@
+---
+layout: default
+---
+
+<!-- Documentation index specific styles -->
+<style>
+    .docs-masthead {
+        background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+        padding: 4rem 0 3rem 0;
+        margin-top: 4rem;
+    }
+
+    .docs-category-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .docs-item .card {
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+        border: 1px solid #dee2e6;
+    }
+
+    .docs-item .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .docs-item .card-title a {
+        text-decoration: none;
+        color: #495057;
+    }
+
+    .docs-item .card-title a:hover {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .card-footer-custom {
+        margin-top: auto;
+        padding-top: 0.5rem;
+        border-top: 1px solid #f8f9fa;
+    }
+
+    @media (max-width: 768px) {
+        .docs-item {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+
+<!-- Page Header -->
+<header class="docs-masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading text-center">
+                    <h1 class="text-white">
+                        <i class="fas fa-lock text-danger mr-2"></i>
+                        {{ page.title | default: "Private Documentation" }}
+                    </h1>
+                    <span class="subheading text-white-50"
+                        >Internal Knowledge Base & Technical Documentation</span
+                    >
+                    <div class="mt-3">
+                        <span class="badge badge-danger">
+                            <i class="fas fa-lock"></i> Private Access Only
+                        </span>
+                        <span class="badge badge-light">
+                            {{ site.docs.size }} Documents
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <!-- All Documentation by Category -->
+        <div class="col-md-12">
+            <div class="docs-categories-section">
+                <h4>
+                    <i class="fas fa-folder-open mr-2"></i> All Documentation
+                </h4>
+
+                {% assign docs_by_category = site.docs | group_by: 'category' %}
+                {% for category in docs_by_category %}
+                <div
+                    class="docs-category-section mb-4"
+                    data-category="{% if category.name == '' %}uncategorized{% else %}{{ category.name }}{% endif %}"
+                >
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button
+                                    class="btn btn-link text-left w-100 p-0"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#category-{{ forloop.index }}"
+                                    aria-expanded="true"
+                                >
+                                    <i class="fas fa-folder mr-2"></i>
+                                    {% if category.name == "" %} Uncategorized
+                                    {% else %} {{ category.name }} {% endif %}
+                                    <span class="badge badge-secondary ml-2"
+                                        >{{ category.items.size }}</span
+                                    >
+                                </button>
+                            </h5>
+                        </div>
+                        <div
+                            id="category-{{ forloop.index }}"
+                            class="collapse {% if forloop.first %}show{% endif %}"
+                        >
+                            <div class="card-body">
+                                <div class="row">
+                                    {% for doc in category.items %}
+                                    <div class="col-md-6">
+                                        <div
+                                            class="docs-item mb-3"
+                                            data-title="{{ doc.title | default: doc.name | downcase }}"
+                                            data-content="{{ doc.content | strip_html | downcase }}"
+                                        >
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">
+                                                        <a
+                                                            href="{{ doc.url | relative_url }}"
+                                                            >{{ doc.title |
+                                                            default: doc.name
+                                                            }}</a
+                                                        >
+                                                    </h6>
+                                                    <p
+                                                        class="card-text small text-muted"
+                                                    >
+                                                        {{ doc.excerpt |
+                                                        strip_html | truncate:
+                                                        100 }}
+                                                    </p>
+                                                    <div
+                                                        class="card-footer-custom"
+                                                    >
+                                                        {% if doc.date %}
+                                                        <small
+                                                            class="text-muted d-block mt-1"
+                                                            >{{ doc.date | date:
+                                                            "%b %d, %Y"
+                                                            }}</small
+                                                        >
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

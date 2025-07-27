@@ -4,14 +4,34 @@ url: https://brpl20.github.io
 title: ProcStudio Blog
 email: contato@procstudio.com.br
 description: Sistema de gerenciamento escritório e automatização de documentos.
-logo: 'img/logo-procstudio-blog.png'
+logo: "img/logo-procstudio-blog.png"
 
-markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
+markdown: kramdown
+paginate: 5
+paginate_path: "/posts/page:num/"
 remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
 
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
+
+# Collections for documentation
+collections:
+  docs:
+    output: true
+    permalink: /docs/:name/
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "docs"
+      sitemap: false
+  - scope:
+      path: "docs/index.html"
+    values:
+      layout: "docs-index"
+      sitemap: false

@@ -1,0 +1,446 @@
+---
+layout: default
+---
+
+<!-- Documentation specific styles -->
+<style>
+    .docs-masthead {
+        background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+        padding: 4rem 0 2rem 0;
+        margin-top: 4rem;
+    }
+
+    .docs-sidebar {
+        background: #f8f9fa;
+        border-radius: 0.375rem;
+        padding: 1.5rem;
+        position: sticky;
+        top: 100px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+
+    .docs-nav-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .docs-nav-list li {
+        margin-bottom: 0.5rem;
+    }
+
+    .docs-nav-list a {
+        color: #6c757d;
+        text-decoration: none;
+        padding: 0.375rem 0.75rem;
+        border-radius: 0.25rem;
+        display: block;
+        font-size: 0.9rem;
+    }
+
+    .docs-nav-list a:hover,
+    .docs-nav-list a.active {
+        background-color: #e9ecef;
+        color: #495057;
+        text-decoration: none;
+    }
+
+    .docs-category-title {
+        color: #495057;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .docs-content {
+        background: white;
+        border-radius: 0.375rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .docs-toc {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        padding: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .docs-toc h6 {
+        margin-bottom: 0.75rem;
+        color: #495057;
+        font-weight: 600;
+    }
+
+    .docs-toc ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .docs-toc ul li {
+        margin-bottom: 0.25rem;
+    }
+
+    .docs-toc a {
+        color: #6c757d;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .docs-toc a:hover {
+        color: #495057;
+        text-decoration: none;
+    }
+
+    .docs-meta {
+        background: #f8f9fa;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    .docs-related {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .docs-related .card {
+        border: 1px solid #dee2e6;
+        transition: box-shadow 0.15s ease-in-out;
+    }
+
+    .docs-related .card:hover {
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.075);
+    }
+
+    .docs-related .card-title a {
+        text-decoration: none;
+        color: #495057;
+    }
+
+    .docs-related .card-title a:hover {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .print-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 1000;
+        border-radius: 50%;
+        width: 3.5rem;
+        height: 3.5rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+    }
+
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .breadcrumb-item a {
+        color: #6c757d;
+        text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+        color: #495057;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .docs-sidebar {
+            position: static;
+            margin-bottom: 2rem;
+        }
+
+        .docs-content {
+            padding: 1.5rem;
+        }
+
+        .print-btn {
+            bottom: 1rem;
+            right: 1rem;
+        }
+    }
+
+    @media print {
+        .docs-sidebar,
+        .print-btn,
+        .navbar,
+        .docs-masthead {
+            display: none !important;
+        }
+
+        .docs-content {
+            box-shadow: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+</style>
+
+<!-- Page Header -->
+<header class="docs-masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading text-center">
+                    <h1 class="text-white">
+                        <i class="fas fa-lock text-danger mr-2"></i>
+                        {{ page.title | default: "Documentation" }}
+                    </h1>
+                    {% if page.subtitle %}
+                    <span class="subheading text-white-50"
+                        >{{ page.subtitle }}</span
+                    >
+                    {% endif %} {% if page.category %}
+                    <div class="mt-3">
+                        <span class="badge badge-light"
+                            >{{ page.category }}</span
+                        >
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 col-md-4">
+            <div class="docs-sidebar">
+                <!-- Back to Index -->
+                <div class="mb-3">
+                    <a
+                        href="/docs/"
+                        class="btn btn-outline-primary btn-sm btn-block"
+                    >
+                        <i class="fas fa-arrow-left mr-1"></i> Documentation
+                        Index
+                    </a>
+                </div>
+
+                <!-- Breadcrumbs -->
+                {% if page.breadcrumbs %}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/docs/">Docs</a>
+                        </li>
+                        {% for crumb in page.breadcrumbs %} {% if forloop.last
+                        %}
+                        <li class="breadcrumb-item active" aria-current="page">
+                            {{ crumb }}
+                        </li>
+                        {% else %}
+                        <li class="breadcrumb-item">{{ crumb }}</li>
+                        {% endif %} {% endfor %}
+                    </ol>
+                </nav>
+                {% endif %}
+
+                <!-- Category Navigation -->
+                {% assign docs_by_category = site.docs | group_by: 'category' %}
+                {% for category in docs_by_category %}
+                <h6 class="docs-category-title">
+                    {% if category.name == "" %} Uncategorized {% else %} {{
+                    category.name }} {% endif %}
+                </h6>
+                <ul class="docs-nav-list">
+                    {% for doc in category.items %}
+                    <li>
+                        <a
+                            href="{{ doc.url | relative_url }}"
+                            class="{% if page.url == doc.url %}active{% endif %}"
+                        >
+                            {{ doc.title | default: doc.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+
+                <!-- Document Info -->
+                <div class="docs-meta mt-4">
+                    <h6>
+                        <i class="fas fa-info-circle mr-1"></i> Document Info
+                    </h6>
+                    {% if page.date %}
+                    <div class="mb-2">
+                        <strong>Created:</strong><br />
+                        <small>{{ page.date | date: "%B %d, %Y" }}</small>
+                    </div>
+                    {% endif %} {% if page.author %}
+                    <div class="mb-2">
+                        <strong>Author:</strong><br />
+                        <small>{{ page.author }}</small>
+                    </div>
+                    {% endif %} {% if page.tags %}
+                    <div>
+                        <strong>Tags:</strong><br />
+                        {% for tag in page.tags %}
+                        <span class="badge badge-secondary badge-sm mr-1"
+                            >{{ tag }}</span
+                        >
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="col-lg-9 col-md-8">
+            <article class="docs-content">
+                <!-- Table of Contents -->
+                {% if page.show_toc != false %}
+                <div class="docs-toc">
+                    <h6>
+                        <i class="fas fa-list-ul mr-1"></i> Table of Contents
+                    </h6>
+                    <div id="toc"></div>
+                </div>
+                {% endif %}
+
+                <!-- Content -->
+                <div class="docs-body">{{ content }}</div>
+
+                <!-- Cross References -->
+                {% if page.related_docs %}
+                <div class="docs-related">
+                    <h5>
+                        <i class="fas fa-link mr-2"></i> Related Documentation
+                    </h5>
+                    <div class="row">
+                        {% for related in page.related_docs %} {% assign
+                        related_doc = site.docs | where: "slug", related | first
+                        %} {% if related_doc %}
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <a
+                                            href="{{ related_doc.url | relative_url }}"
+                                            >{{ related_doc.title }}</a
+                                        >
+                                    </h6>
+                                    <p class="card-text small text-muted">
+                                        {{ related_doc.excerpt | strip_html |
+                                        truncate: 100 }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %} {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Navigation Footer -->
+                <div
+                    class="d-flex justify-content-between mt-4 pt-3 border-top"
+                >
+                    <div>
+                        {% assign prev_doc = site.docs | reverse | where_exp:
+                        "doc", "doc.url < page.url" | first %} {% if prev_doc %}
+                        <a
+                            href="{{ prev_doc.url | relative_url }}"
+                            class="btn btn-outline-secondary btn-sm"
+                        >
+                            <i class="fas fa-arrow-left mr-1"></i> {{
+                            prev_doc.title | truncate: 20 }}
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        {% assign next_doc = site.docs | where_exp: "doc",
+                        "doc.url > page.url" | first %} {% if next_doc %}
+                        <a
+                            href="{{ next_doc.url | relative_url }}"
+                            class="btn btn-outline-secondary btn-sm"
+                        >
+                            {{ next_doc.title | truncate: 20 }}
+                            <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Print Button -->
+<button
+    onclick="window.print()"
+    class="btn btn-secondary print-btn"
+    title="Print this document"
+>
+    <i class="fas fa-print"></i>
+</button>
+
+<!-- Documentation specific scripts -->
+<script>
+    $(document).ready(function () {
+        // Generate Table of Contents
+        var toc = $("#toc");
+        var headings = $(".docs-body").find("h1, h2, h3, h4, h5, h6");
+
+        if (headings.length > 0) {
+            var tocList = $("<ul></ul>");
+
+            headings.each(function (index) {
+                var heading = $(this);
+                var id = "heading-" + index;
+                heading.attr("id", id);
+
+                var level = parseInt(heading.prop("tagName").charAt(1));
+                var indent = (level - 1) * 15;
+
+                var tocItem = $(
+                    '<li style="margin-left: ' +
+                        indent +
+                        'px; margin-bottom: 0.25rem;"><a href="#' +
+                        id +
+                        '">' +
+                        heading.text() +
+                        "</a></li>",
+                );
+                tocList.append(tocItem);
+            });
+
+            toc.append(tocList);
+        } else {
+            toc.parent().hide();
+        }
+
+        // Smooth scrolling for TOC links
+        $(document).on("click", 'a[href^="#"]', function (e) {
+            e.preventDefault();
+            var target = $($.attr(this, "href"));
+            if (target.length) {
+                $("html, body").animate(
+                    {
+                        scrollTop: target.offset().top - 100,
+                    },
+                    500,
+                );
+            }
+        });
+    });
+</script>

@@ -1,0 +1,461 @@
+<!-- Documentation Search Include -->
+<div class="docs-search-container">
+  <div class="search-box">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+      <input type="text"
+             id="docs-search-input"
+             class="form-control"
+             placeholder="Search documentation..."
+             autocomplete="off">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="clear-search">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-results" id="search-results" style="display: none;">
+    <div class="search-results-header">
+      <span class="results-count">0 results found</span>
+      <button class="btn btn-sm btn-link close-results">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="search-results-list" id="search-results-list">
+      <!-- Results will be populated here -->
+    </div>
+  </div>
+</div>
+
+<!-- Search Index Data -->
+<script type="application/json" id="docs-search-data">
+{
+  "documents": [
+    {% for doc in site.docs %}
+    {
+      "title": {{ doc.title | default: doc.name | jsonify }},
+      "url": {{ doc.url | relative_url | jsonify }},
+      "category": {{ doc.category | default: "Uncategorized" | jsonify }},
+      "tags": {{ doc.tags | default: array | jsonify }},
+      "content": {{ doc.content | strip_html | normalize_whitespace | jsonify }},
+      "excerpt": {{ doc.excerpt | strip_html | normalize_whitespace | truncate: 200 | jsonify }},
+      "author": {{ doc.author | default: "" | jsonify }},
+      "date": {{ doc.date | date: "%Y-%m-%d" | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<style>
+.docs-search-container {
+  position: relative;
+}
+
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.results-count {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.close-results {
+  padding: 0;
+  color: #6c757d;
+}
+
+.close-results:hover {
+  color: #495057;
+}
+
+.search-results-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.search-result-item:hover {
+  background-color: #f8f9fa;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-title {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+.search-result-title:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.search-result-excerpt {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.search-result-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-result-category {
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.search-result-tag {
+  font-size: 0.75rem;
+  background-color: #dee2e6;
+  color: #6c757d;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.search-highlight {
+  background-color: #fff3cd;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.no-results {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.no-results i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+/* Loading state */
+.search-loading {
+  padding: 1rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.search-loading i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-results {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  .search-results-list {
+    max-height: calc(100vh - 60px);
+  }
+}
+</style>
+
+<script>
+(function() {
+  let searchData = null;
+  let searchIndex = null;
+
+  // Initialize search functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('docs-search-input');
+    const searchResults = document.getElementById('search-results');
+    const searchResultsList = document.getElementById('search-results-list');
+    const clearButton = document.getElementById('clear-search');
+    const closeButton = document.querySelector('.close-results');
+
+    if (!searchInput) return;
+
+    // Load search data
+    const searchDataElement = document.getElementById('docs-search-data');
+    if (searchDataElement) {
+      try {
+        searchData = JSON.parse(searchDataElement.textContent);
+        buildSearchIndex();
+      } catch (e) {
+        console.error('Failed to parse search data:', e);
+      }
+    }
+
+    // Search input event listeners
+    searchInput.addEventListener('input', debounce(performSearch, 300));
+    searchInput.addEventListener('focus', function() {
+      if (searchInput.value.trim()) {
+        searchResults.style.display = 'block';
+      }
+    });
+
+    // Clear search
+    clearButton.addEventListener('click', function() {
+      searchInput.value = '';
+      searchResults.style.display = 'none';
+    });
+
+    // Close results
+    closeButton.addEventListener('click', function() {
+      searchResults.style.display = 'none';
+    });
+
+    // Close results when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.docs-search-container')) {
+        searchResults.style.display = 'none';
+      }
+    });
+
+    // Keyboard navigation
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        searchResults.style.display = 'none';
+        searchInput.blur();
+      }
+    });
+  });
+
+  function buildSearchIndex() {
+    if (!searchData || !searchData.documents) return;
+
+    searchIndex = searchData.documents.map(function(doc, index) {
+      return {
+        id: index,
+        title: doc.title.toLowerCase(),
+        content: doc.content.toLowerCase(),
+        excerpt: doc.excerpt.toLowerCase(),
+        category: doc.category.toLowerCase(),
+        tags: doc.tags.map(tag => tag.toLowerCase()).join(' '),
+        original: doc
+      };
+    });
+  }
+
+  function performSearch() {
+    const query = document.getElementById('docs-search-input').value.trim();
+    const searchResults = document.getElementById('search-results');
+    const searchResultsList = document.getElementById('search-results-list');
+    const resultsCount = document.querySelector('.results-count');
+
+    if (!query || !searchIndex) {
+      searchResults.style.display = 'none';
+      return;
+    }
+
+    if (query.length < 2) {
+      searchResults.style.display = 'none';
+      return;
+    }
+
+    const results = searchDocuments(query);
+    displaySearchResults(results, query);
+
+    resultsCount.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} found`;
+    searchResults.style.display = 'block';
+  }
+
+  function searchDocuments(query) {
+    if (!searchIndex) return [];
+
+    const queryTerms = query.toLowerCase().split(/\s+/).filter(term => term.length > 1);
+    const results = [];
+
+    searchIndex.forEach(function(doc) {
+      let score = 0;
+      let matchedTerms = 0;
+
+      queryTerms.forEach(function(term) {
+        // Title matches (highest weight)
+        if (doc.title.includes(term)) {
+          score += 10;
+          matchedTerms++;
+        }
+
+        // Category matches
+        if (doc.category.includes(term)) {
+          score += 5;
+          matchedTerms++;
+        }
+
+        // Tag matches
+        if (doc.tags.includes(term)) {
+          score += 3;
+          matchedTerms++;
+        }
+
+        // Content matches
+        const contentMatches = (doc.content.match(new RegExp(term, 'g')) || []).length;
+        if (contentMatches > 0) {
+          score += contentMatches;
+          matchedTerms++;
+        }
+
+        // Excerpt matches
+        if (doc.excerpt.includes(term)) {
+          score += 2;
+          matchedTerms++;
+        }
+      });
+
+      // Only include results that match at least one term
+      if (matchedTerms > 0) {
+        results.push({
+          document: doc.original,
+          score: score,
+          matchedTerms: matchedTerms
+        });
+      }
+    });
+
+    // Sort by score (descending) and number of matched terms
+    results.sort(function(a, b) {
+      if (a.score !== b.score) {
+        return b.score - a.score;
+      }
+      return b.matchedTerms - a.matchedTerms;
+    });
+
+    return results.slice(0, 10); // Limit to top 10 results
+  }
+
+  function displaySearchResults(results, query) {
+    const searchResultsList = document.getElementById('search-results-list');
+
+    if (results.length === 0) {
+      searchResultsList.innerHTML = `
+        <div class="no-results">
+          <i class="fas fa-search"></i>
+          <div>No results found for "${escapeHtml(query)}"</div>
+          <small>Try different keywords or check spelling</small>
+        </div>
+      `;
+      return;
+    }
+
+    const resultsHtml = results.map(function(result) {
+      const doc = result.document;
+      const highlightedTitle = highlightText(doc.title, query);
+      const highlightedExcerpt = highlightText(doc.excerpt, query);
+
+      const tagsHtml = doc.tags.slice(0, 3).map(function(tag) {
+        return `<span class="search-result-tag">${escapeHtml(tag)}</span>`;
+      }).join('');
+
+      return `
+        <div class="search-result-item" onclick="window.location.href='${doc.url}'">
+          <div class="search-result-title">
+            ${highlightedTitle}
+          </div>
+          <div class="search-result-excerpt">
+            ${highlightedExcerpt}
+          </div>
+          <div class="search-result-meta">
+            <span class="search-result-category">${escapeHtml(doc.category)}</span>
+            ${tagsHtml}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    searchResultsList.innerHTML = resultsHtml;
+  }
+
+  function highlightText(text, query) {
+    if (!query) return escapeHtml(text);
+
+    const queryTerms = query.split(/\s+/).filter(term => term.length > 1);
+    let highlightedText = escapeHtml(text);
+
+    queryTerms.forEach(function(term) {
+      const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
+      highlightedText = highlightedText.replace(regex, '<span class="search-highlight">$1</span>');
+    });
+
+    return highlightedText;
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = function() {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+})();
+</script>

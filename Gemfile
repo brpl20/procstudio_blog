@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 # gem 'jekyll', '~> 4.3.2'
 gem 'jekyll-theme-clean-blog'
 
+# Ruby 3.4 compatibility gems
+gem 'csv'
+gem 'base64'
+gem 'bigdecimal'
+
 group :jekyll_plugins do
   gem 'github-pages'
   gem 'jekyll-feed', '~> 0.12'

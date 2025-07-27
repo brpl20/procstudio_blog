@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block access to private documentation
+Disallow: /docs/
+Disallow: /_docs/
+
+# Standard Jekyll exclusions
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_sass/
+Disallow: /assets/
+
+# Sitemap location
+Sitemap: https://brpl20.github.io/sitemap.xml
