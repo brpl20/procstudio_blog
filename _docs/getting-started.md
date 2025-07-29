@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with ProcStudio"
 category: "Setup & Installation"
-date: 2024-12-28
+date: 2026-12-28
 author: "Development Team"
 tags: [getting-started, setup, installation, basics]
 excerpt: "Complete guide to getting started with ProcStudio development environment and basic workflows."
