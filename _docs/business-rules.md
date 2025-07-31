@@ -1,3 +1,14 @@
+---
+title: "Regras de Negócio"
+category: "Regras"
+date: 2025-07-29
+author: "Bruno Pellizzetti"
+tags: [business, models]
+excerpt: "Regras de Negócio..."
+breadcrumbs: ["Development", "API Reference"]
+related_docs: ["getting-started", "authentication-guide"]
+---
+
 # Modelo de Regras de Negócio do ProcStudio
 
 ## Sumário
