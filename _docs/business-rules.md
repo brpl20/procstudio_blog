@@ -1,117 +1,188 @@
----
-title: "Business Rules"
-category: "Business"
-date: 2025-07-29
-author: "Bruno Pellizzetti"
-tags: [business, models]
-excerpt: "Business rules..."
-breadcrumbs: ["Development", "API Reference"]
-related_docs: ["getting-started", "authentication-guide"]
----
+# Modelo de Regras de Negócio do ProcStudio
 
-# ProcStudio Business Rules Model
+## Sumário
+- [Visão e Evolução do Projeto](#project-vision--evolution)
+- [Arquitetura do Sistema](#system-architecture)
+- [Modelos de Dados Principais](#core-data-models)
+- [Regras de Lógica de Negócio](#business-logic-rules)
+- [Autorização e Segurança](#authorization--security)
+- [Melhores Práticas de Arquitetura de Software](#software-architecture-best-practices)
+- [Estratégia de Testes](#testing-strategy)
+- [Framework de Validação](#validation-framework)
+- [Prevenção e Resolução de Bugs](#bug-prevention--resolution)
 
-## Table of Contents
-- [Project Vision & Evolution](#project-vision--evolution)
-- [System Architecture](#system-architecture)
-- [Core Data Models](#core-data-models)
-- [Business Logic Rules](#business-logic-rules)
-- [Authorization & Security](#authorization--security)
-- [Software Architecture Best Practices](#software-architecture-best-practices)
-- [Testing Strategy](#testing-strategy)
-- [Validation Framework](#validation-framework)
-- [Bug Prevention & Resolution](#bug-prevention--resolution)
+## Visão e Evolução do Projeto
 
-## Project Vision & Evolution
+### Declaração de Missão
+O ProcStudio foi concebido para revolucionar como advogados geram documentos legais, transformando um processo tradicionalmente complexo e demorado em um fluxo de trabalho simplificado e eficiente, desta forma...
 
-### Mission Statement
-ProcStudio was conceived to revolutionize how lawyers generate legal documents, transforming a traditionally complex and time-consuming process into a streamlined, efficient workflow. The platform addresses the critical need for lawyers to produce both simple individual documents and mass document generation while maintaining legal accuracy and compliance.
+> Devemos sempre pensar na experiência do usuário em primeiro lugar como a matriz principal do negócio
 
-Zero Paper =>
+O sistema deve facilitar a vida do usuário advogado e também dos seus clientes, que serão também usuários secundários do nosso sistema, independente dos caminhos tecnológicos que tenhamos que seguir.
 
-User First =>
+A ideia do sistema surgiu a partir da necessidade prática de evitar trabalhos repetitivos e aprimorar o fluxo de trabalho para o advogado e sua equipe com a ideia central de geração de documentos de forma automatizada, porém, com a criação de documentos, vem uma série de requisitos como cadastro do usuário e dados relacionados a tarefas, trabalhos, processos e requisitos afins essenciais para o bom desenvolvimento do trabalho do advogado.
 
-OBS Player => Criar jornada do usuário : Excalidraw
+O documento mais utilizado em um escritório é a Procuração. Este é o documento que permite a atuação do advogado em favor do seu cliente, daí no nome ProcStudio. Outros documentos muito utilizados são: Contrato de Honorários, Termo de Renúncia do Juizado Especial de Pequenas Causas e Declaração de Carência.
 
-Domínios/Registros =>
+Esses são os documentos básicos que estão no sistema. O objetivo é implementar todos esses documentos de acordo com as particularidades de cada área de atuação do direito e no futuro implementar outros documentos mais avançados que permitirão ao advogado uma facilidade extra no fluxo do seu trabalho, como por exemplo contratos em geral e petições.
 
-Traduzir =>
+A plataforma atende à necessidade crítica dos advogados de produzir tanto documentos individuais simples quanto no futuro, a geração em massa de documentos (V?), mantendo a precisão legal e conformidade.
 
-Trazer Disclamer Docx para cá =>
+### Princípios
+1. Usuário em primeiro lugar + Aprendizado com o usuário
+2. Zero Papel
+3. Mobilidade
+4. Integração
+5. Customização pelo usuário
+6. Atendimento Automatizado
 
+#### Usuário e Aprendizado com o Usuário
 
-### Lembretes
-- Arquivos compartilhados
-- Compartilhar JSONS insominia
-- Segurança de Dados e senhas
-- Compartilhar design Figma
-- Falar sobre planos de pagamentos, acabou ficando em outros lugares esparsos
-- Hard Problems => Reduce PDF
+Devemos ter noção de que o direito, como um ramo muito extenso, possui particularidades mesmo na geração de pequenos documentos. Um advogado que atua mais na área empresarial por exemplo, utilizará pouco o Termo de Renúncia e a Declaração de Carência, enquanto que, um criminalista também precisará de documentos diferentes, com poderes específicos e termos diversos, o que mesmo com toda a inteligência artificial disponível não será possível prever.
 
+Assim, ao invés de reclamarmos que o usuário está pedindo uma customização vamos aproveitar o feedback gratuito para gerar essa customização e abarcar todo um grupo de usuários como por exemplo no ramo do direito administrativo por exemplo.
 
-### Development Phases
+#### Zero Papel
 
-#### Phase 1: MVP - Lawyer-Customer Document Layer (Current)
-**Objective**: Establish core document generation between lawyers and their cutomers
+Um dos princípios defendidos pelo ProcStudio é a adoção de ZERO papel no escritório do advogado e isso não é tão fácil como parece. É muito mais fácil imprimir uma procuração e entregar para o cliente assinar do que utilizar uma complexo sistema de identificação e assinatura digital, especialmente se ele estiver na sua frente, no seu escritório, conseguiu imaginar a situação?
 
-**Key Features**:
-- Basic legal document templates (contracts -> contrato de honorários, power of attorney -> procuração, declarations -> declaração, termo de juizado)
-- Customer relationship management
-- Document creation and storage
-- Digital signature integration
-- Simple workflow management (jobs and works)
+Para isso, precisamos criar sistemas de assinatura muito fluídos, para que seja um processo cômodo, seguro, arquivável com segurança e fácil de ser acessado posteriormente tanto pelo nosso usuário advogado como para outros usuários.
 
-**Business Value**: Reduces document creation time by 50% and ensures consistency across all customer documents.
+Além da geração de documentos, instituir uma política de zero papel no escritório também é difícil por conta dos documentos físicos existentes (e persistentes), que precisam ser digitalizados e tratados, o que muitas vezes, por comodidade, acaba “ficando no escritório” até durante anos.
 
-#### Phase 2-> X: Extended Legal Ecosystem Integration
-**Objective**: Expand document generation to include justice system and broader legal contexts
+Desta forma, devemos auxiliar nosso usuário também na digitalização de documentos, o que é uma implementação também necessária em um escritório. Devemos adotar tecnologias modernas de digitalização, indexação, arquivamento para facilitar esse objetivo comum.
 
-**Planned Features**:
-- Compliance checking
-- Lawyers Partnerships
-- AI Helpers
-- AI-powered document template suggestions
-- AI Extractors
-- Mass Document Generation: Subs - regularoty + compliance
-- Social Contract and updates
+#### Público Alvo
+Nosso foco é entre um advogado iniciante e intermediário, geralmente que trabalha de forma autônoma, com parceiros advogados e/ou contadores, uma secretária e um estagiário ou somente um dos dois.
+
+Não necessariamente teremos um serviço de armazenamento em nuvem, porém, em certa medida a tendência é que seja necessário uma quantidade grande de armazenamento mesmo em razão da geração dos documentos e seu armazenamento e formas de autenticação e confiabilidade.
+
+Neste sentido, precisamos otimizar os arquivos de PDF de forma fluída, sem necessidade de intervenção do usuário, bem como adicionar leitura de OCR e até em um futuro a geração de cadastros e documentos com base em OCR, o que tem sido facilitado com a carteira de motorista digital e o cadastro Gov.Br (biblioteca de OCR em desenvolvimento).
+
+#### Mobilidade
+Nossa meta também é a criação de aplicativos móveis capazes de dar o mesmo conforto na geração de documentos, hoje não podemos pensar no desenvolvimento sem pensar também no aspecto de mobilidade.
+
+O objetivo é que o advogado possa gerar um contrato de forma “Instantânea” onde quer que ele esteja. Está em uma reunião com um cliente? Basta pegar os dados pessoais, digitar, tirar uma foto de dois ou três documentos que o cliente receberá em seu celular uma notificação (geralmente através de e-mail ou whatsapp) para assinar o referido documento.
+
+#### Integração
+Um dos nossos nortes é também comunicação com outros aplicativos através de API, tornando-se um sistema capaz de adotar os serviços mais conhecidos atualmente como Google Cloud, Microsoft e Dropbox.
+
+Não queremos reinventar a roda. Por exemplo, seria muito mais fácil fazer a geração dos documentos diretamente em PDF. Existem centenas de ferramentas que fazem isso com base em qualquer tipo de informação, do HTML até bancos de dados mais complexos.
+
+Mais fácil para nós, porém, melhor para o cliente? Com certeza não, porque o DOCX é um formato universal utilizado há décadas que está enraizado na cultura brasileira. E não podemos ser arrogantes ao ponto de pensar que o documento será gerado de forma tão perfeita que não será necessária uma revisão final, e quem melhor do que o próprio advogado que gera o documento para avaliar e entender se aquele documento está apto a ser assinado por todas as partes?
+
+#### Customização pelo usuário
+Precisamos de um sistema dinâmico que o usuário possa ajudar a construir e criar por si mesmo, não dependendo tanto de atualizações dos desenvolvedores para adaptação de suas necessidades particulares, o que é possível observar como tendência de grandes aplicativos como Trello, Monday e outros semelhantes.
+
+Essa ajuda do usuário também será sempre fundamental para melhorias e o crescimento do sistema, temos muito a aprender com advogados espalhados por todo o Brasil.
+
+#### Atendimento automatizado - redução de custos
+Um dos nossos maiores gargalos iniciais é o atendimento e conforto do usuário. Uma forma de atendê-los de forma personalizada é o ideal, porém, no momento inicial, ainda inviável, de forma que precisamos pensar em soluções de atendimento ao usuário de baixo custo, como a criação de Wikis e ChatBots para tirar as dúvidas mais comuns e entender os pontos de atrito entre o usuário e o sistema.
+
+### Outros Projetos
+- ProcStudioIA: Sistema de geraçõa de contratos através de inteligência artificial.
+
+### Caminhos e Links Úteis
+
+#### Figma
+Projeto Figma, cuidado para não confundir o ProcStudio e o ProcStudioIA, porém conhecer os dois porque ambos seguirão diretrizes muito semelhantes.
+
+[Figma](https://www.figma.com/design/prxj9niEVqRSIk9vBZsGfa/ProcStudio?node-id=0-1&p=f&t=KAUEkqOGGFyS2xVd-0)
+
+#### Arquivos compartilhados
+- Temos uma pasta compartilhada em que teremos:
+  - identidade visual => `/prc-dv`
+
+#### APIs Internas
+Temos duas [APIs próprias](https://github.com/brpl20/procstudio_apis), uma para a busca de advogados: `legal_data` e a outra para leitura de OCR: `procstudio_ocr`.
+
+#### Documentação de API
+- Arquivo Insomnia compartilhado
+
+#### Senhas
+- Bitwarden
+
+#### Domínios e Registros
+- PROCSTUDIO.APP.BR
+- PROCSTUDIO.BLOG.BR
+- PROCSTUDIO.COM.BR => Principal
+- PROCSTUDIOAI.COM.BR => Principal ProcStudioAI
+- PROCSTUDIOIA.COM.BR
+
+#### SSH - Servidores - Deploy
+- Um arquivo separado será criado (todo).
+
+## Jornada do Usuário
+OBS Player => Criar jornada do usuário : Excalidraw (todo).
+
+## Pagamentos
+- Falar sobre planos de pagamentos, acabou ficando em outros lugares esparsos (todo).
+
+## Problemas dificeis de resolver
+- Reduzir o PDF  para caber em uma única página quando ocupar pouco mais de um parágrafo na segunda folha: arquivos de Word podem mudar de formatação e não serem muito precisos, especialmente quando convertermos em PDF, o que pode gerar um documento desagradável, ruim, deixando por exemplo apenas uma assinatura na segunda folha. Precisamos de uma
+
+### Fases de Desenvolvimento
+
+#### Fase 1: MVP - Camada de Documentos Advogado-Cliente (Atual)
+**Objetivo**: Estabelecer a geração básica de documentos entre advogados e seus clientes
+
+**Principais Recursos**:
+- Templates básicos de documentos legais (contratos -> contrato de honorários, procuração -> procuração, declarações -> declaração, termo de juizado)
+- Gerenciamento de relacionamento com clientes
+- Criação e armazenamento de documentos
+- Integração com assinatura digital
+- Gerenciamento simples de fluxo de trabalho (jobs e works)
+
+**Valor para o Negócio**: Reduz o tempo de criação de documentos em 50% e garante consistência em todos os documentos dos clientes.
+
+#### Fase 2-> X: Integração Estendida ao Ecossistema Jurídico
+**Objetivo**: Expandir a geração de documentos para incluir o sistema de justiça e contextos jurídicos mais amplos
+
+**Recursos Planejados**:
+- Verificação de conformidade
+- Parcerias entre advogados
+- Assistentes de IA
+- Sugestões de modelos de documentos baseadas em IA
+- Extratores de IA
+- Geração em Massa de Documentos: Subs - regulatório + conformidade
+- Contrato Social e atualizações
 - Wiki
-- Reports
-- Improve Tasks
-- Improve Works
-- Improve Processes
-- Finances
-- Integration with external legal databases
-- Time tracking for billing purposes
-- Progress reporting to customers
-- Approval workflows for task/jogs/docs/works(?) completion
+- Relatórios
+- Melhorar Tarefas
+- Melhorar Trabalhos
+- Melhorar Processos
+- Finanças
+- Integração com bancos de dados jurídicos externos
+- Rastreamento de tempo para fins de faturamento
+- Relatórios de progresso para clientes
+- Fluxos de aprovação para conclusão de tarefas/jobs/documentos/trabalhos(?)
 - Finalizar contrato
 - Ferramentas: Cálculos básicos
 - Ferramentas: Cálculos avançados -- sistemas como planilha inteligente
 
+**Valor para o Negócio**: Transforma práticas jurídicas em operações altamente eficientes e orientadas por dados, capazes de lidar com trabalho jurídico em larga escala.
 
-**Business Value**: Transforms legal practices into highly efficient, data-driven operations capable of handling large-scale legal work.
+## Arquitetura do Sistema
 
-## System Architecture
+### Princípios Arquitetônicos
+- **Design Orientado a Domínio**: Modelos refletem conceitos jurídicos do mundo real
+- **Arquitetura Orientada a Serviços**: Serviços modulares para geração de documentos, gerenciamento de usuários e integrações
+- **Padrões Orientados a Eventos**: Eventos do ciclo de vida do documento desencadeiam fluxos de trabalho automatizados
+- **Princípios SOLID**: Código base manutenível e extensível
 
-### Architectural Principles
-- **Domain-Driven Design**: Models reflect real-world legal concepts
-- **Service-Oriented Architecture**: Modular services for document generation, user management, and integrations
-- **Event-Driven Patterns**: Document lifecycle events trigger automated workflows
-- **SOLID Principles**: Maintainable, extensible codebase
-
-### Technology Stack
+### Stack de Tecnologia
 - **Backend**: Ruby on Rails 7.0 --- Ruby 2.6.10
-- **Database**: PostgreSQL
-- **Authentication**: Devise with role-based access control
-- **Document Processing**: Docx gem with custom legal template engine
-- **Digital Signatures**: ZapSign API integration (OFFLINE :x:)
-- **Cloud Infrastructure Storage**: AWS S3
-- **Server**: Hostinger
-- **Email Services**: MailJet Free
-- **Monitoring**: Pending :x:
-- **Testing**: Peinding :x:
+- **Banco de Dados**: PostgreSQL
+- **Autenticação**: Devise com controle de acesso baseado em funções
+- **Processamento de Documentos**: Gem Docx com motor personalizado de modelos jurídicos
+- **Assinaturas Digitais**: Integração com API ZapSign (OFFLINE :x:)
+- **Infraestrutura de Armazenamento em Nuvem**: AWS S3
+- **Servidor**: Hostinger
+- **Serviços de Email**: MailJet Free
+- **Monitoramento**: Pendente :x:
+- **Testes**: Pendente :x:
 
-#### Environments
+#### Ambientes
 - [Homologação Admins](https://admin_hml.procstudio.com.br)
 - [Homologação Clientes](https://admin_hml.procstudio.com.br)
 - [Produção](https://procstudio.com.br)
@@ -120,22 +191,21 @@ Trazer Disclamer Docx para cá =>
 
 #### Repositórios
 - [API Central](https://github.com/brpl20/prc_api)
-- [Client Frontend](https://github.com/brpl20/prc_client-fe)
-- [Admin Frontend](https://github.com/brpl20/prc_admin-fe)
+- [Frontend do Cliente](https://github.com/brpl20/prc_client-fe)
+- [Frontend Admin](https://github.com/brpl20/prc_admin-fe)
 - [Blog-Docs](https://github.com/brpl20/procstudio_blog)
-- [Tests](https://github.com/brpl20/procstudio_tests)
+- [Testes](https://github.com/brpl20/procstudio_tests)
 - [ProcStudio-OCR] *TD*
 - [Legal_Data] *TD*
 
+## Modelos de Dados Principais
 
-## Core Data Models
+### Entidades Primárias
 
-### Primary Entities
+#### Modelo Admin
+**Propósito**: Usuários centrais da plataforma representando profissionais jurídicos
 
-#### Admin Model
-**Purpose**: Central platform users representing legal professionals
-
-**Admin Model Journey**:
+**Jornada do Modelo Admin**:
 
 Possíveis jornadas do usuário:
 
@@ -152,794 +222,292 @@ Neste contexto teremos também mudanças nas sociedades e contratação de estag
 
 Neste sentido precisamos observar que temos muitas lógicas e possibilidades dentro de uma sociedade, o que nós trás a uma ideia de encapsulamento do negócio dentro de uma figura abstrata de times, que abarcará essas lógicas e determinará os relacionamentos entre estes times e os customers dentro do negócio, com todos os detalhes e granularidade possível.
 
-**Relationships**:
-- `belongs_to :office` (optional - solo practitioners supported)
+**Relacionamentos**:
+- `belongs_to :office` (opcional - profissionais autônomos suportados)
 
-##### Accountants
+##### Contadores
 
-**Business Context**: In Brazilian legal practice, accountants often work closely with lawyers, especially in tax law. The system accommodates this with specialized roles:
-- **Counter**: Accountant with lawyer-like powers for tax cases
-- **ExCounter**: External accountant with read-only access for customer monitoring
+**Contexto de Negócio**: Na prática jurídica brasileira, contadores frequentemente trabalham em estreita colaboração com advogados, especialmente em direito tributário. O sistema acomoda isso com funções especializadas:
+- **Counter**: Contador com poderes semelhantes aos de advogado para casos fiscais
+- **ExCounter**: Contador externo com acesso somente de leitura para monitoramento de clientes
 
+#### Modelo Customer
+**Propósito**: Clientes do advogado com acesso ao sistema para monitoramento de casos
 
-#### Customer Model
-**Purpose**: Lawyer's customers with system access for case monitoring
+**Regras de Negócio**:
+- Criação automática de conta quando adicionado ao sistema
+- Convite por email com credenciais de acesso seguras
+- Acesso por subdomínio: `customer.procstudio.com.br`
+- Isolamento de dados por contexto de advogado/escritório
+- Download de documentos e monitoramento do status do caso
 
-**Business Rules**:
-- Automatic account creation when added to system
-- Email invitation with secure access credentials
-- Subdomain access: `customer.procstudio.com.br`
-- Data isolation per lawyer/office context
-- Document download and case status monitoring
+**Principais Recursos**:
+- Visibilidade da linha do tempo do caso
+- Acesso à biblioteca de documentos
+- Histórico de comunicação com a equipe jurídica
+- Rastreamento de faturamento e pagamento
 
-**Key Features**:
-- Case timeline visibility
-- Document library access
-- Communication history with legal team
-- Billing and payment tracking
+#### Modelo Work
+**Propósito**: Casos ou projetos jurídicos primários para clientes
 
-#### Work Model
-**Purpose**: Primary legal cases or projects for customers
+**Contexto de Negócio**: Representa assuntos jurídicos abrangentes que podem se estender por meses ou anos, contendo múltiplas tarefas menores (jobs).
 
-**Business Context**: Represents comprehensive legal matters that may span months or years, containing multiple smaller tasks (jobs).
-
-**Relationships**:
+**Relacionamentos**:
 - `belongs_to :customer`
 - `belongs_to :admin` -> Provavelmente mudaremos para `team`
 
-#### Job Model
-**Purpose**: Granular tasks within works or standalone customer services
+#### Modelo Job
+**Propósito**: Tarefas granulares dentro de works ou serviços independentes para clientes
 
-**Business Value**: Enables precise task delegation and progress tracking, essential for law firm efficiency.
+**Valor para o Negócio**: Permite delegação precisa de tarefas e rastreamento de progresso, essencial para a eficiência do escritório de advocacia.
 
-**Types of Jobs**:
-- **Pre-Work Jobs**: Initial consultations, research, document review
-- **Work-Related Jobs**: Specific tasks within larger cases
-- **Administrative Jobs**: Filing, correspondence, scheduling
-- **Research Jobs**: Legal precedent research, case law analysis
+**Tipos de Jobs**:
+- **Jobs Pré-Work**: Consultas iniciais, pesquisa, revisão de documentos
+- **Jobs Relacionados a Work**: Tarefas específicas dentro de casos maiores
+- **Jobs Administrativos**: Arquivamento, correspondência, agendamento
+- **Jobs de Pesquisa**: Pesquisa de precedentes legais, análise de jurisprudência
 
-**Delegation Rules**:
-- Jobs can be assigned to any qualified team member
+**Regras de Delegação**:
+- Jobs podem ser atribuídos a qualquer membro qualificado da equipe
 
+#### Modelo JobWork
+**Propósito**: Relacionamento muitos-para-muitos permitindo associações job-work
 
-#### JobWork Model
-**Purpose**: Many-to-many relationship enabling job-work associations
+**Lógica de Negócio**: Permite gerenciamento complexo de casos onde jobs podem pertencer a múltiplos works ou existir independentemente.
 
-**Business Logic**: Allows complex case management where jobs can belong to multiple works or exist independently.
+#### Modelo Document
+**Propósito**: Documentos legais gerados com controle de versão e assinaturas digitais
 
-#### Document Model
-**Purpose**: Generated legal documents with version control and digital signatures
+**Ciclo de Vida do Documento**:
+1. **Seleção de Modelo**: Escolha entre modelos jurídicos predefinidos
+2. **Preenchimento de Dados**: Preenchimento automático a partir dos dados do cliente/work
+3. **Processo de Revisão**: Fluxos de trabalho de aprovação interna
+4. **Revisão do Cliente**: Acesso do cliente para revisão e feedback
+5. **Assinatura Digital**: Integração com ZapSign para assinaturas legalmente vinculativas
+6. **Arquivo**: Armazenamento seguro com trilha de auditoria
 
-**Document Lifecycle**:
-1. **Template Selection**: Choose from predefined legal templates
-2. **Data Population**: Automatic filling from customer/work data
-3. **Review Process**: Internal approval workflows
-4. **Customer Review**: Customer access for review and feedback
-5. **Digital Signature**: ZapSign integration for legally binding signatures
-6. **Archive**: Secure storage with audit trail
+**Tipos de Documentos**:
+- Procuração (Procuração)
+- Contratos Legais (Contratos)
+- Declarações de Pobreza (Declaração de Carência)
+- Termos de Renúncia (Termo de Renúncia)
+- Petições Judiciais (Petições)
 
-**Document Types**:
-- Power of Attorney (Procuração)
-- Legal Contracts (Contratos)
-- Poverty Declarations (Declaração de Carência)
-- Waiver Terms (Termo de Renúncia)
-- Court Filings (Petições)
+#### Modelo Power
+**Propósito**: Autoridades de representação legal atribuídas a works específicos
 
-#### Power Model
-**Purpose**: Legal representation authorities assigned to specific works
+**Contexto Jurídico Brasileiro**: Powers definem o escopo da autoridade do advogado para agir em nome dos clientes em vários contextos jurídicos.
 
-**Brazilian Legal Context**: Powers define the scope of lawyer's authority to act on behalf of customers in various legal contexts.
+**Categorias de Power**:
+- Poderes gerais de representação
+- Representação específica em tribunal
+- Poderes de procedimento administrativo
+- Representação tributária e fiscal
+- Poderes de representação corporativa
 
-**Power Categories**:
-- General representation powers
-- Specific court representation
-- Administrative procedure powers
-- Tax and fiscal representation
-- Corporate representation powers
+#### Modelo Honorary
+**Propósito**: Gerenciamento da estrutura de honorários para serviços jurídicos
 
-#### Honorary Model
-**Purpose**: Fee structure management for legal services
+**Tipos de Honorários**:
+- **Work (Fixo)**: Valor predeterminado para serviços específicos
+- **Success**: Percentual de ganhos monetários alcançados
+- **Both**: Combinação de taxa fixa mais percentual de sucesso
+- **Bonus (Pro Bono)**: Serviços jurídicos gratuitos
+- **Previdenciário Especial**: Estruturas de honorários personalizadas para casos de previdência social
 
-**Fee Types**:
-- **Work (Fixed)**: Predetermined amount for specific services
-- **Success**: Percentage of monetary gains achieved
-- **Both**: Combination of fixed fee plus success percentage
-- **Bonus (Pro Bono)**: Free legal services
-- **Previdenciary Special**: Custom fee structures for social security cases
+#### Modelo Office
+**Propósito**: Entidade de escritório de advocacia ou jurídico
 
-#### Office Model
-**Purpose**: Law firm or legal office entity
+**Regras de Negócio**:
+- Associação opcional (suporta profissionais autônomos)
+- Múltiplos advogados por escritório suportados
+- Gerenciamento compartilhado de clientes e casos dentro do escritório
+- Controles administrativos e de faturamento separados
 
-**Business Rules**:
-- Optional association (supports solo practitioners)
-- Multiple lawyers per office supported
-- Shared customer and case management within office
-- Separate billing and administrative controls
+#### Perfis (ProfileAdmin, ProfileCustomer, ProfileWork)
+**Propósito**: Armazenamento de atributos estendidos para entidades principais
 
-#### Profiles (ProfileAdmin, ProfileCustomer, ProfileWork)
-**Purpose**: Extended attribute storage for core entities
+**Padrão de Design**: O padrão de perfil evita o inchaço do modelo principal enquanto mantém uma estrutura de banco de dados limpa.
 
-**Design Pattern**: Profile pattern prevents core model bloat while maintaining clean database structure.
+**ProfileAdmin**: Credenciais profissionais, certificações, especializações
+**ProfileCustomer**: Detalhes pessoais, status legal, preferências de contato
+**ProfileWork**: Metadados específicos do caso, campos personalizados, referências externas
 
-**ProfileAdmin**: Professional credentials, certifications, specializations
-**ProfileCustomer**: Personal details, legal status, contact preferences
-**ProfileWork**: Case-specific metadata, custom fields, external references
+#### Modelos de Suporte
 
-#### Supporting Models
+**Modelo Represent**: Lida com representação legal para indivíduos incapacitados ou entidades corporativas que requerem representação individual.
 
-**Represent Model**: Handles legal representation for incapacitated individuals or corporate entities requiring individual representation.
+**Modelo Recommendation**: Sistema de referência que rastreia de onde os clientes se originam e gerencia pagamentos de taxas de indicação.
 
-**Recommendation Model**: Referral system tracking where customers originate and managing referral fee payments.
+**Modelo PendingDocument**: Sistema de checklist para documentos requeridos dos clientes, com capacidades futuras de notificação.
 
-**PendingDocument Model**: Checklist system for documents required from customers, with future notification capabilities.
+**Modelos Address/Bank/Email/Phone**: Informações normalizadas de contato e financeiras com validação para padrões brasileiros.
 
-**Address/Bank/Email/Phone Models**: Normalized contact and financial information with validation for Brazilian standards.
+## Regras de Lógica de Negócio
 
-## Business Logic Rules
+### BR001 - Fluxo de Trabalho de Geração de Documentos
+**Gatilhos de Geração Automática**:
+- Criação de perfil de cliente → Procuração simples
+- Registro de work → Procuração abrangente + documentos relacionados
+- Conclusão de job → Relatórios de progresso e documentos de faturamento
 
-### BR001 - Document Generation Workflow
-**Automatic Generation Triggers**:
-- Customer profile creation → Simple power of attorney
-- Work registration → Comprehensive power of attorney + related documents
-- Job completion → Progress reports and billing documents
+**Gerenciamento de Modelos**:
+- Modelos mestres armazenados no AWS S3
+- Personalizações específicas do cliente suportadas
+- Controle de versão para alterações de modelos
+- Mecanismos de fallback para falhas de modelos
 
-**Template Management**:
-- Master templates stored on AWS S3
-- Customer-specific customizations supported
-- Version control for template changes
-- Fallback mechanisms for template failures
+### BR002 - Matriz de Controle de Acesso do Usuário
 
-### BR002 - User Access Control Matrix
-
-| Role | Customers | Works | Jobs | Documents | Admin Management |
+| Função | Clientes | Works | Jobs | Documentos | Gerenciamento de Admin |
 |------|-----------|-------|------|-----------|------------------|
-| Lawyer (Full) | Full CRUD | Full CRUD | Full CRUD | Full CRUD | Full CRUD |
-| Lawyer (L1) | Full CRUD | Full CRUD | Full CRUD | Full CRUD | Read Only |
-| Paralegal | CRU + Supervised D | Full CRUD* | Full CRUD* | Full CRUD* | None |
-| Trainee | CR (limited) | UD (own only) | UD (own only) | UD (own only) | None |
-| Secretary | CR (no bank) | UD (own only) | UD (own only) | UD (own only) | None |
-| Counter | CRU | CRU (tax only) | CRU (tax related) | CRU (tax docs) | None |
-| ExCounter | R (assigned only) | R (assigned only) | R (assigned only) | R (assigned only) | None |
+| Advogado (Completo) | CRUD Completo | CRUD Completo | CRUD Completo | CRUD Completo | CRUD Completo |
+| Advogado (L1) | CRUD Completo | CRUD Completo | CRUD Completo | CRUD Completo | Somente Leitura |
+| Paralegal | CRU + D Supervisionado | CRUD Completo* | CRUD Completo* | CRUD Completo* | Nenhum |
+| Estagiário | CR (limitado) | UD (somente próprios) | UD (somente próprios) | UD (somente próprios) | Nenhum |
+| Secretário | CR (sem banco) | UD (somente próprios) | UD (somente próprios) | UD (somente próprios) | Nenhum |
+| Contador | CRU | CRU (somente fiscal) | CRU (relacionado a fiscal) | CRU (docs fiscais) | Nenhum |
+| ExContador | R (somente atribuídos) | R (somente atribuídos) | R (somente atribuídos) | R (somente atribuídos) | Nenhum |
 
-*With approval workflow for entities created by others
+*Com fluxo de aprovação para entidades criadas por outros
 
-### BR003 - Data Integrity Rules
+### BR003 - Regras de Integridade de Dados
 - TD
 
-### BR004 - Workflow State Management
-**Work States**: `draft → active → [pending] → completed/cancelled → archived`
-**Document States**: `draft → review → approved → signed → archived`
-**Job States**: `assigned → in_progress → review → completed/cancelled`
+### BR004 - Gerenciamento de Estado do Fluxo de Trabalho
+**Estados de Work**: `rascunho → ativo → [pendente] → concluído/cancelado → arquivado`
+**Estados de Document**: `rascunho → revisão → aprovado → assinado → arquivado`
+**Estados de Job**: `atribuído → em_progresso → revisão → concluído/cancelado`
 
-**State Transition Rules**:
+**Regras de Transição de Estado**:
 - TD: Revisar estes `states`:
-  - Only assigned users can change states
-  - Approval workflows for critical transitions
-  - Audit logging for all state changes
-  - Rollback capabilities for administrative corrections
+  - Somente usuários atribuídos podem alterar estados
+  - Fluxos de aprovação para transições críticas
+  - Registro de auditoria para todas as mudanças de estado
+  - Capacidades de reversão para correções administrativas
 
-## Authorization & Security
+## Autorização e Segurança
 - TD
 
-### BR006 - Data Isolation Rules
+### BR006 - Regras de Isolamento de Dados
 - TD - Revisar:
-  - Customer data partitioned by lawyer/office
-  - Document access requires explicit permissions
-  - Cross-office data sharing requires administrative approval
-  - Audit trails for all data access attempts
-
-### BR007 - External Integration Security
-- ZapSign API calls use OAuth 2.0 with token refresh
-- MailJet integration with encrypted templates
-- AWS S3 access with signed URLs and expiration
-- All external API failures gracefully handled
-
-## Software Architecture Best Practices
-
-### Design Patterns Implementation
-
-#### 1. Service Objects Pattern
-```ruby
-# Document generation service
-class DocumentGenerationService
-  def initialize(work, template_type)
-    @work = work
-    @template_type = template_type
-  end
-
-  def call
-    validate_inputs
-    load_template
-    populate_data
-    generate_document
-    store_securely
-    notify_stakeholders
-  rescue StandardError => e
-    handle_generation_error(e)
-  end
-
-  private
-
-  def validate_inputs
-    raise InvalidWorkError unless @work.valid?
-    raise TemplateNotFoundError unless template_exists?
-  end
-end
-```
-
-#### 2. Repository Pattern
-```ruby
-class CustomerRepository
-  def find_by_lawyer(lawyer_id)
-    Customer.includes(:profile_customer, :works)
-           .where(admin_id: lawyer_id)
-           .active
-  end
-
-  def find_with_pending_documents(lawyer_id)
-    find_by_lawyer(lawyer_id)
-      .joins(:pending_documents)
-      .where(pending_documents: { status: 'pending' })
-  end
-end
-```
-
-#### 3. Decorator Pattern for Document Templates
-```ruby
-class DocumentDecorator < SimpleDelegator
-  def initialize(document, context = {})
-    super(document)
-    @context = context
-  end
-
-  def formatted_legal_text
-    apply_legal_formatting(content)
-  end
-
-  def customer_safe_content
-    remove_internal_notes(content)
-  end
-end
-```
-
-#### 4. Observer Pattern for Audit Logging
-```ruby
-class AuditObserver
-  def self.document_created(document)
-    AuditLog.create(
-      action: 'document_created',
-      entity: document,
-      user: Current.user,
-      metadata: document.audit_metadata
-    )
-  end
-end
-```
-
-### Code Organization Best Practices
-
-#### 1. Domain-Driven Directory Structure
-```
-app/
-├── models/
-│   ├── concerns/
-│   │   ├── auditable.rb
-│   │   ├── brazilian_validations.rb
-│   │   └── role_permissions.rb
-│   ├── legal/
-│   │   ├── document.rb
-│   │   ├── power.rb
-│   │   └── work.rb
-│   └── users/
-│       ├── admin.rb
-│       └── customer.rb
-├── services/
-│   ├── document_generation/
-│   ├── user_management/
-│   └── integration/
-├── policies/
-├── decorators/
-└── repositories/
-```
-
-#### 2. Configuration Management
-```ruby
-# config/business_rules.yml
-document_generation:
-  max_template_size: 10MB
-  supported_formats: ['.docx', '.pdf']
-  signature_timeout: 30.days
-
-user_permissions:
-  trainee:
-    max_customers: 50
-    requires_approval: true
-  paralegal:
-    max_customers: 200
-    can_delete_own: true
-```
-
-#### 3. Error Handling Strategy
-```ruby
-class ApplicationService
-  include ErrorHandling
-
-  private
-
-  def handle_errors
-    yield
-  rescue ValidationError => e
-    Result.failure(:validation_failed, e.message)
-  rescue ExternalServiceError => e
-    Result.failure(:external_service_failed, e.message)
-  rescue StandardError => e
-    notify_error_tracking(e)
-    Result.failure(:internal_error, "An unexpected error occurred")
-  end
-end
-```
-
-## Testing Strategy
-
-### 1. Test Pyramid Implementation
-
-#### Unit Tests (70% of test suite)
-```ruby
-# spec/models/work_spec.rb
-RSpec.describe Work, type: :model do
-  describe 'validations' do
-    it 'requires customer association' do
-      work = build(:work, customer: nil)
-      expect(work).not_to be_valid
-      expect(work.errors[:customer]).to include("must exist")
-    end
-  end
-
-  describe 'state transitions' do
-    it 'transitions from draft to active when approved' do
-      work = create(:work, :draft)
-      work.approve!
-      expect(work).to be_active
-    end
-  end
-
-  describe 'business rules' do
-    it 'calculates total fees correctly for success-based honorary' do
-      work = create(:work, :with_success_honorary)
-      expect(work.calculate_total_fees(10000)).to eq(3000) # 30% of 10000
-    end
-  end
-end
-```
-
-#### Integration Tests (20% of test suite)
-```ruby
-# spec/services/document_generation_service_spec.rb
-RSpec.describe DocumentGenerationService do
-  describe '#call' do
-    let(:work) { create(:work, :with_customer) }
-    let(:service) { described_class.new(work, 'power_of_attorney') }
-
-    it 'generates document successfully' do
-      expect { service.call }.to change(Document, :count).by(1)
-    end
-
-    it 'handles template not found error' do
-      allow(service).to receive(:template_exists?).and_return(false)
-      result = service.call
-      expect(result).to be_failure
-      expect(result.error).to eq(:template_not_found)
-    end
-  end
-end
-```
-
-#### End-to-End Tests (10% of test suite)
-```ruby
-# spec/features/document_workflow_spec.rb
-RSpec.describe 'Document Workflow', type: :feature do
-  scenario 'Lawyer creates work and generates documents' do
-    lawyer = login_as_lawyer
-    customer = create(:customer, admin: lawyer)
-
-    visit new_work_path
-    fill_in_work_details(customer)
-    click_button 'Create Work'
-
-    expect(page).to have_content('Work created successfully')
-    expect(Document.count).to eq(1) # Auto-generated power of attorney
-    expect(page).to have_link('Download Power of Attorney')
-  end
-end
-```
-
-### 2. Test Data Management
-```ruby
-# spec/factories/works.rb
-FactoryBot.define do
-  factory :work do
-    association :customer
-    association :admin
-    title { Faker::Lorem.sentence }
-    description { Faker::Lorem.paragraph }
-    status { :draft }
-
-    trait :with_honorary do
-      association :honorary, :fixed_rate
-    end
-
-    trait :tax_case do
-      case_type { 'tributario_pis_cofins' }
-      association :admin, :counter
-    end
-  end
-end
-```
-
-### 3. Test Coverage Requirements
-- **Models**: 95% line coverage
-- **Services**: 90% line coverage
-- **Controllers**: 85% line coverage
-- **Integration**: 80% path coverage
-
-### 4. Performance Testing
-```ruby
-# spec/performance/document_generation_spec.rb
-RSpec.describe 'Document Generation Performance' do
-  it 'generates documents within acceptable time limits' do
-    work = create(:work)
-
-    expect {
-      DocumentGenerationService.new(work, 'contract').call
-    }.to perform_under(2.seconds)
-  end
-
-  it 'handles bulk document generation efficiently' do
-    works = create_list(:work, 100)
-
-    expect {
-      BulkDocumentGenerationService.new(works).call
-    }.to perform_under(30.seconds)
-  end
-end
-```
-
-## Validation Framework
-
-### 1. Model-Level Validations
-```ruby
-class Customer < ApplicationRecord
-  # Brazilian-specific validations
-  validates :cpf_cnpj, presence: true,
-                       format: { with: CPF_CNPJ_REGEX },
-                       uniqueness: { scope: :admin_id }
-
-  validates :email, presence: true,
-                    format: { with: URI::MailTo::EMAIL_REGEXP },
-                    uniqueness: { case_sensitive: false }
-
-  # Business rule validations
-  validate :customer_limit_per_lawyer
-  validate :active_status_requirements
-
-  private
-
-  def customer_limit_per_lawyer
-    return unless admin&.trainee?
-
-    if admin.customers.active.count >= 50
-      errors.add(:admin, 'Trainees cannot manage more than 50 customers')
-    end
-  end
-end
-```
-
-### 2. Service-Level Validations
-```ruby
-class WorkCreationService
-  include ActiveModel::Validations
-
-  attr_accessor :customer, :admin, :work_params
-
-  validates :customer, presence: true
-  validates :admin, presence: true
-  validate :admin_can_create_work_for_customer
-  validate :work_type_allowed_for_admin_role
-
-  def call
-    return failure_result unless valid?
-
-    Work.transaction do
-      create_work
-      generate_initial_documents
-      notify_stakeholders
-    end
-  rescue StandardError => e
-    failure_result(e.message)
-  end
-
-  private
-
-  def admin_can_create_work_for_customer
-    unless admin.can_manage?(customer)
-      errors.add(:admin, 'Cannot create work for this customer')
-    end
-  end
-end
-```
-
-### 3. Input Sanitization
-```ruby
-module InputSanitizer
-  extend ActiveSupport::Concern
-
-  included do
-    before_save :sanitize_text_fields
-  end
-
-  private
-
-  def sanitize_text_fields
-    self.class.text_attributes.each do |attr|
-      value = send(attr)
-      next unless value.is_a?(String)
-
-      send("#{attr}=", sanitize_legal_text(value))
-    end
-  end
-
-  def sanitize_legal_text(text)
-    # Remove potentially dangerous content while preserving legal formatting
-    ActionController::Base.helpers.sanitize(
-      text,
-      tags: %w[p br strong em u],
-      attributes: []
-    )
-  end
-end
-```
-
-### 4. API Input Validation
-```ruby
-class WorksController < ApplicationController
-  def create
-    @work = WorkCreationService.new(work_creation_params)
-
-    if @work.call.success?
-      render json: { work: @work.result }, status: :created
-    else
-      render json: { errors: @work.errors }, status: :unprocessable_entity
-    end
-  end
-
-  private
-
-  def work_creation_params
-    params.require(:work).permit(:title, :description, :customer_id, :case_type)
-          .merge(admin: current_admin)
-  end
-end
-```
-
-## Bug Prevention & Resolution
-
-### 1. Static Code Analysis
-```ruby
-# .rubocop.yml
-AllCops:
-  TargetRubyVersion: 3.0
-  NewCops: enable
-  Exclude:
-    - 'db/schema.rb'
-    - 'bin/**/*'
-
-# Custom rules for legal domain
-Metrics/MethodLength:
-  Max: 15
-  Exclude:
-    - 'app/services/document_generation/**/*' # Complex legal logic allowed
-
-Layout/LineLength:
-  Max: 120
-
-Style/Documentation:
-  Enabled: true # Mandatory for legal compliance
-```
-
-### 2. Pre-commit Hooks
-```bash
-#!/bin/sh
-# .git/hooks/pre-commit
-
-# Run security audit
-bundle exec bundle-audit check --update
-
-# Run code quality checks
-bundle exec rubocop
-
-# Run critical tests
-bundle exec rspec spec/models/ spec/services/
-
-# Check for sensitive data
-git diff --cached --name-only | xargs grep -l "password\|secret\|key" && {
-  echo "Potential sensitive data found"
-  exit 1
-}
-```
-
-### 3. Error Monitoring & Alerting
-```ruby
-class ApplicationController < ActionController::API
-  rescue_from StandardError, with: :handle_unexpected_error
-  rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
-  rescue_from Pundit::NotAuthorizedError, with: :handle_unauthorized
-
-  private
-
-  def handle_unexpected_error(exception)
-    # Log error with context
-    ErrorTracker.capture_exception(exception, {
-      user_id: current_user&.id,
-      request_id: request.uuid,
-      params: sanitized_params
-    })
-
-    # Alert for critical errors
-    if critical_error?(exception)
-      AlertingService.notify_on_call_engineer(exception)
-    end
-
-    render json: { error: 'Internal server error' }, status: 500
-  end
-
-  def critical_error?(exception)
-    exception.is_a?(DocumentGenerationError) ||
-    exception.is_a?(PaymentProcessingError) ||
-    exception.is_a?(DataCorruptionError)
-  end
-end
-```
-
-### 4. Database Migration Safety
-```ruby
-class AddIndexToCustomersEmail < ActiveRecord::Migration[7.0]
-  disable_ddl_transaction! # Required for concurrent index creation
-
-  def up
-    # Create index concurrently to avoid locking
-    add_index :customers, :email, algorithm: :concurrently
-
-    # Add constraint after index is created
-    add_foreign_key :customers, :admins, validate: false
-    validate_foreign_key :customers, :admins
-  end
-
-  def down
-    remove_foreign_key :customers, :admins
-    remove_index :customers, :email
-  end
-end
-```
-
-### 5. Monitoring & Health Checks
-```ruby
-class HealthChecksController < ApplicationController
-  def show
-    checks = {
-      database: database_healthy?,
-      redis: redis_healthy?,
-      s3: s3_healthy?,
-      zapsign: zapsign_healthy?,
-      document_generation: document_generation_healthy?
-    }
-
-    status = checks.values.all? ? :ok : :service_unavailable
-
-    render json: {
-      status: status,
-      checks: checks,
-      timestamp: Time.current
-    }, status: status
-  end
-
-  private
-
-  def database_healthy?
-    ActiveRecord::Base.connection.execute('SELECT 1')
-    true
-  rescue StandardError
-    false
-  end
-
-  def document_generation_healthy?
-    # Test document generation with dummy data
-    service = DocumentGenerationService.new(
-      build(:work),
-      'test_template'
-    )
-    service.test_mode = true
-    service.call.success?
-  rescue StandardError
-    false
-  end
-end
-```
-
-### 6. Bug Triage Process
-
-#### Severity Levels
-- **P0 (Critical)**: System down, data loss, security breach
-- **P1 (High)**: Core functionality broken, customer-facing errors
-- **P2 (Medium)**: Feature partially broken, workaround available
-- **P3 (Low)**: Minor issues, cosmetic problems
-
-#### Resolution Workflow
-```ruby
-class BugReport
-  include AASM
-
-  aasm column: :status do
-    state :reported, initial: true
-    state :triaged
-    state :assigned
-    state :in_progress
-    state :resolved
-    state :verified
-    state :closed
-
-    event :triage do
-      transitions from: :reported, to: :triaged
-      after do
-        assign_priority
-        notify_relevant_team
-      end
-    end
-
-    event :assign do
-      transitions from: :triaged, to: :assigned
-      after do
-        create_development_task
-        set_deadline_based_on_priority
-      end
-    end
-  end
-end
-```
-
-### 7. Post-Incident Review Process
+  - Dados do cliente particionados por advogado/escritório
+  - Acesso a documentos requer permissões explícitas
+  - Compartilhamento de dados entre escritórios requer aprovação administrativa
+  - Trilhas de auditoria para todas as tentativas de acesso a dados
+
+### BR007 - Segurança de Integração Externa
+- Chamadas da API ZapSign usam OAuth 2.0 com atualização de token
+- Integração com MailJet com modelos criptografados
+- Acesso ao AWS S3 com URLs assinadas e expiração
+- Todas as falhas de API externa tratadas com elegância
+
+## Melhores Práticas de Arquitetura de Software
+
+### Implementação de Padrões de Design
+
+#### 1. Padrão de Objetos de Serviço
+
+#### 2. Padrão de Repositório
+
+#### 3. Padrão Decorator para Modelos de Documentos
+
+#### 4. Padrão Observer para Registro de Auditoria
+
+### Melhores Práticas de Organização de Código
+
+#### 1. Estrutura de Diretório Orientada a Domínio
+
+#### 2. Gerenciamento de Configuração
+
+#### 3. Estratégia de Tratamento de Erros
+
+## Estratégia de Testes
+
+### 1. Implementação da Pirâmide de Testes
+
+#### Testes Unitários (70% da suíte de testes)
+
+#### Testes de Integração (20% da suíte de testes)
+
+#### Testes End-to-End (10% da suíte de testes)
+
+### 2. Gerenciamento de Dados de Teste
+
+### 3. Requisitos de Cobertura de Testes
+- **Modelos**: 95% de cobertura de linha
+- **Serviços**: 90% de cobertura de linha
+- **Controladores**: 85% de cobertura de linha
+- **Integração**: 80% de cobertura de caminho
+
+### 4. Testes de Performance
+
+## Framework de Validação
+
+### 1. Validações em Nível de Modelo
+
+### 2. Validações em Nível de Serviço
+
+### 3. Sanitização de Entrada
+
+### 4. Validação de Entrada API
+
+## Prevenção e Resolução de Bugs
+
+### 1. Análise de Código Estática
+
+### 2. Hooks Pré-commit
+
+### 3. Monitoramento e Alerta de Erros
+
+### 4. Segurança de Migração de Banco de Dados
+
+### 5. Monitoramento e Verificações de Saúde
+
+### 6. Processo de Triagem de Bugs
+
+#### Níveis de Severidade
+- **P0 (Crítico)**: Sistema inoperante, perda de dados, violação de segurança
+- **P1 (Alto)**: Funcionalidade principal quebrada, erros visíveis ao cliente
+- **P2 (Médio)**: Recurso parcialmente quebrado, solução alternativa disponível
+- **P3 (Baixo)**: Problemas menores, problemas cosméticos
+
+#### Fluxo de Trabalho de Resolução
+
+### 7. Processo de Revisão Pós-Incidente
 ```markdown
-## Incident Report Template
+## Modelo de Relatório de Incidente
 
-### Incident Summary
-- **Incident ID**: INC-2024-001
-- **Date/Time**: 2024-01-15 14:30 UTC
-- **Duration**: 45 minutes
-- **Severity**: P1
-- **Services Affected**: Document Generation, Customer Portal
+### Resumo do Incidente
+- **ID do Incidente**: INC-2024-001
+- **Data/Hora**: 15/01/2024 14:30 UTC
+- **Duração**: 45 minutos
+- **Severidade**: P1
+- **Serviços Afetados**: Geração de Documentos, Portal do Cliente
 
-### Root Cause Analysis
-1. **Immediate Cause**: AWS S3 bucket policy misconfiguration
-2. **Contributing Factors**:
-   - Inadequate testing of policy changes
-   - Missing monitoring for S3 access errors
-3. **Root Cause**: Deployment process lacks infrastructure validation
+### Análise de Causa Raiz
+1. **Causa Imediata**: Configuração incorreta da política do bucket AWS S3
+2. **Fatores Contribuintes**:
+   - Teste inadequado de alterações de política
+   - Monitoramento ausente para erros de acesso ao S3
+3. **Causa Raiz**: Processo de implantação carece de validação de infraestrutura
 
-### Resolution Steps
-1. Reverted S3 bucket policy to previous version
-2. Validated document access functionality
-3. Notified affected customers
+### Etapas de Resolução
+1. Revertida política do bucket S3 para versão anterior
+2. Validada funcionalidade de acesso a documentos
+3. Notificados clientes afetados
 
-### Prevention Measures
-- [ ] Add S3 access validation to deployment pipeline
-- [ ] Implement monitoring for document generation errors
-- [ ] Create runbook for S3-related incidents
-- [ ] Schedule infrastructure review meeting
+### Medidas de Prevenção
+- [ ] Adicionar validação de acesso ao S3 ao pipeline de implantação
+- [ ] Implementar monitoramento para erros de geração de documentos
+- [ ] Criar manual de procedimentos para incidentes relacionados ao S3
+- [ ] Agendar reunião de revisão de infraestrutura
 ```
 
 ---
 
-*This comprehensive business rules model serves as the authoritative guide for ProcStudio development, ensuring legal compliance, system reliability, and maintainable code architecture.*
+*Este modelo abrangente de regras de negócio serve como guia autoritativo para o desenvolvimento do ProcStudio, garantindo conformidade legal, confiabilidade do sistema e arquitetura de código manutenível.*
 
-**Last Updated**:
-**Version**: 2.0
-**Next Review**: March 28, 2025
+**Última Atualização**:
+**Versão**: 2.0
+**Próxima Revisão**: 28 de março de 2025
