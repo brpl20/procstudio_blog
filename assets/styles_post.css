@@ -1,0 +1,57 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #16171A;
+}
+
+p {
+    color: #16171A;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+h1+p,
+h2+p,
+h3+p {
+    margin-top: 0.5rem;
+}
+
+pre {
+    background: #1e1e1e;
+    color: #7efa7a;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+}
+
+.col-lg-8 img {
+    width: 700px;
+    max-width: 750px;
+}
+
+a {
+    color: #0277EE;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0057B0;
+}
