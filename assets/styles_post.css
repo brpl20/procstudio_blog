@@ -9,14 +9,28 @@ h6 {
     color: #16171A;
 }
 
-p {
+.col-lg-8 p {
     color: #16171A;
+    font-size: 19px;
 }
-
+h3,
 h4,
 h5,
 h6 {
     font-weight: 700;
+}
+
+h3{
+    font-size: 28px;
+}
+h4{
+    font-size: 23px;
+}
+h5{
+    font-size: 20px;
+}
+h6{
+    font-size: 19px;
 }
 
 h1+p,
@@ -45,13 +59,14 @@ pre code {
 .col-lg-8 img {
     width: 700px;
     max-width: 750px;
+    margin: 10px 0;
 }
 
-a {
+.col-lg-8 a {
     color: #0277EE;
     text-decoration: underline;
 }
 
-a:hover {
+.col-lg-8 a:hover {
     color: #0057B0;
 }

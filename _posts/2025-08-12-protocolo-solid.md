@@ -8,10 +8,10 @@ date: 2025-08-12
 featured_image: "/assets/images/hud-juridico-cover.jpg"
 categories: [Legal Tech, Privacidade, Inovação, Protocolo Solid]
 tags: [protocolo solid, procstudio ia, dados juridicos, privacidade, legal tech, tim berners-lee, pods, controle usuario]
-background: 'https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png'
-featured_image: "/assets/images/solid-protocol-legal.jpg"
 lang: pt-BR
 author: "Bruno Pellizzetti"
+image: https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png
+og_image: https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png
 ---
 
 ![primeiro-contexto-interativo-simples](https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png)

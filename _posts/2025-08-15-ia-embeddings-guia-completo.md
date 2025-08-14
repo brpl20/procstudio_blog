@@ -1,18 +1,26 @@
 ---
 permalink: /embeddings-de-ia-guia-completo-para-iniciantes-em-2025
 layout: post
-published: false
+published: true
 title: "Embeddings de IA: O Guia Completo para Iniciantes em 2025"
 description: "Descubra o que são embeddings de inteligência artificial, como funcionam e por que são fundamentais para chatbots, sistemas de busca e outras aplicações de IA"
 keywords: "embeddings ia, inteligencia artificial, machine learning, processamento linguagem natural, chatbots, Word2Vec, BERT, transformers"
 date: 2025-08-15
 categories: [Inteligência Artificial, Machine Learning, Tecnologia]
 tags: [embeddings, ia, nlp, deep learning, python, chatbots]
-# background: 'https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png'
-# featured_image: "/assets/images/hud-juridico-cover.jpg"
 lang: pt-BR
 author: "Bruno Pellizzetti"
+image: https://lztforeferfiles.s3.amazonaws.com/prc-embeddings.png
+og_image: https://lztforeferfiles.s3.amazonaws.com/prc-embeddings.png
 ---
+
+<style>
+.col-lg-8 img {
+    max-height: 500px;
+}
+</style>
+
+![Imagem criada por IA representando o Embeddings](https://lztforeferfiles.s3.amazonaws.com/prc-embeddings.png) 
 
 # Embeddings de IA: Como as Máquinas Aprendem a Entender o Significado das Palavras
 

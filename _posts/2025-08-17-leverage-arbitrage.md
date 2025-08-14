@@ -1,17 +1,19 @@
 ---
 permalink: /arbitragem-alavancagem-ia-mundo-juridico
 layout: post
-published: false
+published: true
 title: "O Paradoxo da Alavancagem Tecnológica: Por Que Tudo Parece Estar Desmoronando no Mundo Jurídico"
 description: "Como a diferença de velocidade entre inovação tecnológica e adaptação institucional está transformando o direito e nossa sociedade"
 date: 2025-08-17
 categories: [tecnologia, direito-digital, inteligencia-artificial]
 tags: [IA, legaltech, advocacia, transformacao-digital, jurimetria]
-# background: 'https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png'
-# featured_image: "/assets/images/hud-juridico-cover.jpg"
 lang: pt-BR
 author: "Bruno Pellizzetti"
+image: https://lztforeferfiles.s3.amazonaws.com/prc-leverage-arbitrage.png
+og_image: https://lztforeferfiles.s3.amazonaws.com/prc-leverage-arbitrage.png
 ---
+
+![Paradoxo da Alavancagem](https://lztforeferfiles.s3.amazonaws.com/prc-leverage-arbitrage.png)
 
 # O Paradoxo da Alavancagem Tecnológica: Por Que Tudo Parece Estar Desmoronando no Mundo Jurídico
 
@@ -110,6 +112,6 @@ A pergunta é: qual futuro escolheremos construir no direito brasileiro?
 
 Bruno Pellizzetti, CEO da ProcStudio e ProcStudio IA, é um advogado previdenciário com mais de 15 anos de experiência no mundo jurídico e nos últimos anos tem se especializado em tecnologia e inteligência artificial. É responsável pela implantação de soluções tecnológicas em processos jurídicos nas empresas com o objetivo de democratizar o acesso ao conhecimento jurídico para todos e aumentar a eficiência e precisão das equipes jurídicas.
 
-*Artigo baseado em "The Leverage Arbitrage: Why Everything Feels Broken" por Tushar Dadlani. Link original: https://tushardadlani.com/the-leverage-arbitrage-why-everything-feels-broken*
+*Artigo baseado em "The Leverage Arbitrage: Why Everything Feels Broken" por Tushar Dadlani. [Link original](https://tushardadlani.com/the-leverage-arbitrage-why-everything-feels-broken)*
 
 

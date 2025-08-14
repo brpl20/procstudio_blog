@@ -5,11 +5,12 @@ published: true
 title: "As Vulnerabilidades Ocultas da IA: Por Que Gatos Podem Confundir Sistemas Inteligentes"
 description: "Uma descoberta surpreendente revela como frases aparentemente inofensivas sobre gatos podem comprometer drasticamente o desempenho de sistemas de IA avançados, expondo vulnerabilidades críticas que afetam setores como finanças, direito e saúde."
 date: 2025-08-13
-background: 'https://lztforeferfiles.s3.amazonaws.com/prc-catattack.png'
 categories: [Segurança, Inteligência Artificial]
 tags: [IA, Segurança, Vulnerabilidades, CatAttack, Legal Tech]
 lang: pt-BR
 author: "Bruno Pellizzetti"
+image: https://lztforeferfiles.s3.amazonaws.com/prc-catattack.png
+og_image: https://lztforeferfiles.s3.amazonaws.com/prc-catattack.png
 ---
 
 ![primeiro-contexto-interativo-simples](https://lztforeferfiles.s3.amazonaws.com/prc-catattack.png)
