@@ -1,17 +1,18 @@
 ---
-permalink: /chega-de-copilotos-vamos-para-a-hud
 layout: post
-published: false
 title: "Chega de Copilots! O Futuro é o HUD Jurídico: Como a IA Está Revolucionando o Acesso à Documentação Legal"
-description: "Descubra como estamos desenvolvendo um HUD (Head-Up Display) de documentação jurídica que torna o direito acessível para todos, não apenas advogados."
-date: 2025-08-11
-background: 'https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png'
-featured_image: "/assets/images/hud-juridico-cover.jpg"
-categories: tecnologia
-tags: [inteligência artificial, direito, tecnologia jurídica, advocacia assistida por AI]
-lang: pt-BR
+description: "Descubra como estamos desenvolvendo um HUD (Head-Up Display) de documentação jurídica que torna o direito acessível para todos, não apenas advogados"
+keywords: "hud jurídico, inteligência artificial direito, legal tech, documentação legal, acesso à justiça, IA no direito, tecnologia jurídica, interface jurídica, contrato inteligente, procstudio ia"
+date: 2025-08-19
 author: "Bruno Pellizzetti"
+published: true
+categories: [Legal Tech, Inteligência Artificial, Inovação Jurídica,Direito Digital]
+tags: [hud, ai, direito, documentação jurídica, interface, legal tech, contratos, inovação, acessibilidade jurídica, jurisprudência, juiz virtual]
+image: https://lztforeferfiles.s3.amazonaws.com/prc-ai-hud.png
+og_image: https://lztforeferfiles.s3.amazonaws.com/prc-ai-hud.png
 ---
+
+![Copilots](https://lztforeferfiles.s3.amazonaws.com/prc-ai-hud.png) 
 
 # Chega de Copilots! O Futuro é o HUD Jurídico
 
