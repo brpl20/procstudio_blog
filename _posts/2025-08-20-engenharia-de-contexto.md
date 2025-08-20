@@ -2,8 +2,9 @@
 layout: post
 title: "A Nova Habilidade em IA não é Prompting, é Engenharia de Contexto"
 date: 2025-08-20
-description: "Engenharia de Contexto é a disciplina de dar ao LLM o contexto certo — informações e ferramentas — no formato certo, na hora certa."
-excerpt: "Engenharia de Contexto é um novo termo ganhando força na IA: o foco sai do 'prompt perfeito' e vai para um sistema que monta e entrega o contexto ideal ao LLM."
+permalink: /blog/engenharia-de-contexto
+published: true
+description: "Engenharia de Contexto é um novo termo ganhando força na IA: o foco sai do 'prompt perfeito' e vai para um sistema que monta e entrega o contexto ideal ao LLM."
 author: "Bruno Pellizzetti"
 image: /img/engenharia-de-contexto.png
 og_image: /img/engenharia-de-contexto.png
