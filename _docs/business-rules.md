@@ -229,7 +229,7 @@ Possíveis jornadas do usuário:
 
 Neste contexto teremos também mudanças nas sociedades e contratação de estagiários, secretárias, paralegais e outros advogados.
 
-<< Vídeo do Youtube >>
+https://youtu.be/XqIycze_D2c
 
 Neste sentido precisamos observar que temos muitas lógicas e possibilidades dentro de uma sociedade, o que nós trás a uma ideia de encapsulamento do negócio dentro de uma figura abstrata de times, que abarcará essas lógicas e determinará os relacionamentos entre estes times e os customers dentro do negócio, com todos os detalhes e granularidade possível.
 
