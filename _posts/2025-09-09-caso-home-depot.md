@@ -12,7 +12,7 @@ og_image: "/img/caso-home-depot-e-outros.png"
 author: "Bruno Pellizzetti"
 ---
 
-![IA nas entrevistas de emprego](/img/caso-home-depot-e-outros.png)
+![O Olho que Tudo Vê no Varejo](/img/caso-home-depot-e-outros.png)
 
 ## Introdução: A Caixa Verde que Desencadeou um Alarme de Privacidade
 

@@ -13,7 +13,7 @@ image: "/img/epic-vs-apple.png"
 og_image: "/img/epic-vs-apple.png"
 ---
 
-![IA nas entrevistas de emprego](/img/epic-vs-apple.png)
+![Epic x Apple](/img/epic-vs-apple.png)
 
 # Duelo de Gigantes: Epic x Apple Ganha Força com Y Combinator como 'Amigo da Corte'
 
