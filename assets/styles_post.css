@@ -99,3 +99,40 @@ table tbody tr:nth-child(even) {
 table tbody tr:hover {
   background-color: #e3f2fd;
 }
+
+blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+
+  border-left: 4px solid #0277EE;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: #f9f9f9;
+
+  position: relative;
+  border-radius: 8px;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 3rem;
+  color: #0277EE;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 3rem;
+  color: #0277EE;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+}
+
+blockquote p {
+  margin: 6px;
+}

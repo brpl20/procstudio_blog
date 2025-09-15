@@ -6,6 +6,7 @@ date: 2025-09-13
 categories: [tecnologia privacidade]
 author: "Bruno Pellizzetti"
 lang: pt-BR
+published: true
 permalink: /dependencia-digital-google-e-apple-e-a-erosao-da-nossa-liberdade-digital
 image: "/img/sideloading.png"
 og_image: "/img/sideloading.png"
