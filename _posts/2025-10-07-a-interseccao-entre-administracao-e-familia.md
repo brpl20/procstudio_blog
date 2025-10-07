@@ -12,7 +12,7 @@ image: "/img/a-interseccao-entre-administracao-e-familia-2"
 og_image: "/img/a-interseccao-entre-administracao-e-familia-2"
 ---
 
-![Robô dando aula de probabilistica](/img/a-interseccao-entre-administracao-e-familia-2.png)
+![consertando um vaso utilizando a técnica Kintsugi](/img/a-interseccao-entre-administracao-e-familia-2.png)
 
 # A Interseção entre Família e Administração
 

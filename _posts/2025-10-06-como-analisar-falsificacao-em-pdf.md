@@ -13,7 +13,7 @@ og_image: "/img/como-analisar-falsificacao-em-pdf"
 permalink: "/analisar-falsificacao-em-pdfs/"
 ---
 
-![Robô dando aula de probabilistica](/img/como-analisar-falsificacao-em-pdf.png)
+![documento com alterações sendo investigado](/img/como-analisar-falsificacao-em-pdf.png)
 
 # Como analisar falsificação em PDFs
 
