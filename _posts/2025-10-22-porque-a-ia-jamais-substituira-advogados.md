@@ -13,7 +13,7 @@ image: "/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para
 og_image: "/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro"
 ---
 
-![Show Massive Attack](/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro.png)
+![advogado e radiolosgista](/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro.png)
 
 # Por que a IA jamais substituirá advogados: lições da radiologia para o direito brasileiro
 
