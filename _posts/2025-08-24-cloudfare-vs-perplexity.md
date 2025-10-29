@@ -6,12 +6,12 @@ keywords: "Perplexity, Rastreadores não-declarados, Evasão de No-crawl, Inteli
 date: 2025-08-24
 author: "Bruno Pellizzetti"
 published: true
-categories: Inteligência Artificial, Segurança Cibernética
 tags: Perplexity, Rastreamento, Evasão, No-crawl, Inteligência Artificial
 lang: pt
 permalink: /blog/cloufare-expoe-perplexity-usa-rastreadores-ocultos-nao-declarados
 image: /img/cloudfare-vs-perplexity.png
 og_image: /img/cloudfare-vs-perplexity.png
+categories: [Casos & Mercado, IA & Inovação]
 ---
 
 ![CloudFare Vs Perplexity](/img/cloudfare-vs-perplexity.png) 

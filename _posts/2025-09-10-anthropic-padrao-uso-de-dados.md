@@ -12,6 +12,7 @@ lang: "pt-br"
 permalink: /anthropic-politica-privacidade-default-trap
 image: "/img/artigo-anthropic-padrao-uso-de-dados.png"
 og_image: "/img/artigo-anthropic-padrao-uso-de-dados.png"
+categories: [Privacidade & Vigilância, IA & Inovação]
 ---
 
 ![IA nas entrevistas de emprego](/img/artigo-anthropic-padrao-uso-de-dados.png)

@@ -6,7 +6,7 @@ keywords: "horseless carriages, ia nativa juridica, documentacao juridica, revol
 date: 2025-08-14
 author: "Bruno Pellizzetti"
 published: true
-categories: [Legal Tech, Inovação, Inteligência Artificial, Documentação Jurídica]
+categories: [IA & Inovação, Segurança Digital]
 tags: [horseless carriages, ia nativa, legal tech, inovacao, documentos juridicos]
 lang: pt-BR
 permalink: /blog/carrocas-sem-cavalo-apps-juridicos-fracasso

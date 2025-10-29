@@ -3,7 +3,7 @@ permalink: /o-que-voce-precisa-para-abrir-seu-escritorio-de-advocacia-em-2024
 layout: post
 title: "O que você precisa para abrir seu escritório de advocacia em 2024?"
 description: "Dicas do que é necessário para abrir seu escritório de advocacia, guia completo."
-categories: [advogado, escritorio de advogacia, primeiro escritório, como abrir escritório de advocacia]
+categories: [Gestão de Escritório]
 date: 2023-10-13
 lang: pt-BR
 author: "Bruno Pellizzetti"

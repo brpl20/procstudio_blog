@@ -3,12 +3,12 @@ layout: post
 title: "Os Novos Corsários Digitais: Como as Big Techs Saqueiam Propriedade Intelectual com Patente de Corso do Estado Americano"
 date: 2025-08-26
 author: "Bruno Pelliizzetti"
-categories: [inteligencia-artificial, copyright, economia, historia]
 tags: [corsarios-digitais, OpenAI, Meta, copyright-infringement, fair-use, plano-estrategico-EUA, pirataria-legitimada]
 image: "/img/novos-corsarios.png"
 og_image: "/img/novos-corsarios.png"
 description: "Como OpenAI, Meta e Anthropic se tornaram os corsários do século XXI, saqueando propriedade intelectual global com proteção legal do Estado americano"
 permalink: /novos-corsarios-digitais
+categories: [Privacidade & Vigilância, Direito Digital, Casos & Mercado]
 ---
 
 ![primeiro-contexto-interativo-simples](/img/novos-corsarios.png)

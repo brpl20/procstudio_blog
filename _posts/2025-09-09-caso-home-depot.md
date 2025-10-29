@@ -10,6 +10,7 @@ permalink: /caso-home-depot-e-a-crescente-de-processos-por-vigilancia-do-consumi
 image: "/img/caso-home-depot-e-outros.png"
 og_image: "/img/caso-home-depot-e-outros.png"
 author: "Bruno Pellizzetti"
+categories: [Privacidade & Vigilância, Casos & Mercado]
 ---
 
 ![O Olho que Tudo Vê no Varejo](/img/caso-home-depot-e-outros.png)

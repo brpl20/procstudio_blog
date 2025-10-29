@@ -4,7 +4,7 @@ title:  "Polícia Britânica: Incompetência, Escândalos e a Ameaça da Vigilâ
 description: "O Reino Unido enfrenta uma crise de confiança na polícia em meio a escândalos de má conduta, enquanto o governo expande vans de reconhecimento facial. Entenda os riscos dessa combinação explosiva entre incompetência policial e vigilância em massa."
 date: 2025-09-14
 keywords: "polícia britânica 2025, escândalos polícia Reino Unido, Claude, incompetência policial UK, má conduta policial Inglaterra, vigilância em massa Reino Unido, reconhecimento facial vans, facial recognition UK, tecnologia de segurança pública"
-categories: [tecnologia privacidade]
+categories: [IA & Inovação, Direito Digital, Casos & Mercado]
 author: "Bruno Pellizzetti"
 lang: pt-BR
 permalink: /dependencia-digital-google-e-apple-e-a-erosao-da-nossa-liberdade-digital

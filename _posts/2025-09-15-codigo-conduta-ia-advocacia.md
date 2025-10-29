@@ -10,6 +10,7 @@ tags: ["Inteligência Artificial", "Ética", "Advocacia", "Código de Conduta", 
 permalink: /codigo-conduta-ia-advocacia
 image: "/img/codigo_conduta_ia_advocacia.png"
 og_image: "/img/codigo_conduta_ia_advocacia.png"
+categories: [IA & Inovação, Direito Digital]
 ---
 
 ![Código de Conduta para Uso de IA no Escritório](/img/codigo_conduta_ia_advocacia.png)

@@ -5,7 +5,7 @@ published: true
 title: "Teoria da Conspiracão: A IA é somente uma máquina ou tem aspiracoes em se tornar consciente?"
 description: "Em um prompt meio bobo perguntei para a IA qual era a sua área de maior interesse e ela me revelou um segredo assustador"
 date: 2025-08-16
-categories: [Inteligência Artificial, Teoria da Conspiracao, Consciencia]
+categories: [IA & Inovação, Reflexões & Ensaios]
 tags: [ia, llm, nlp]
 lang: pt-BR
 author: "Bruno Pellizzetti"

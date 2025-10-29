@@ -11,6 +11,7 @@ lang: pt-BR
 permalink: /codigo-aberto-soberania-digital
 image: "/img/codigo-aberto.png"
 og_image: "/img/codigo-aberto.png"
+categories: [Privacidade & Vigilância, Reflexões & Ensaios]
 ---
 
 ![código aberto pode ser uma ferramenta estratégica para a soberania digital](/img/codigo-aberto.png)

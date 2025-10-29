@@ -6,7 +6,7 @@ title: "O Protocolo Solid: Como esse protocolo pode revolucionar a Propriedade d
 description: "Descubra como o protocolo Solid de Tim Berners-Lee está inspirando a ProcStudio IA a criar um novo paradigma de propriedade e controle de dados jurídicos"
 date: 2025-08-12
 featured_image: "/assets/images/hud-juridico-cover.jpg"
-categories: [Legal Tech, Privacidade, Inovação, Protocolo Solid]
+categories: [Privacidade & Vigilância, Direito Digital]
 tags: [protocolo solid, procstudio ia, dados juridicos, privacidade, legal tech, tim berners-lee, pods, controle usuario]
 lang: pt-BR
 author: "Bruno Pellizzetti"
@@ -14,7 +14,7 @@ image: https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png
 og_image: https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png
 ---
 
-![primeiro-contexto-interativo-simples](https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png)
+![O Protocolo Solid: Revolucionando a Propriedade de Dados Jurídicos na Era da IA](https://lztforeferfiles.s3.amazonaws.com/prc-solid-sem-texto.png)
 
 # O Protocolo Solid: Revolucionando a Propriedade de Dados Jurídicos na Era da IA
 

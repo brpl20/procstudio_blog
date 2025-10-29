@@ -11,6 +11,7 @@ permalink: /epic-vs-apple-duelo-de-gigantes
 author: "Bruno Pellizzetti"
 image: "/img/epic-vs-apple.png"
 og_image: "/img/epic-vs-apple.png"
+categories: [Casos & Mercado, Direito Digital]
 ---
 
 ![Epic x Apple](/img/epic-vs-apple.png)

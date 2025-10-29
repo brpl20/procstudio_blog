@@ -6,12 +6,12 @@ keywords: "claude sonnet 4, inteligência artificial jurídica, análise de proc
 date: 2025-09-02
 author: "Bruno Pellizzetti"
 published: true
-categories: [Tecnologia, Jurídico, Inteligência Artificial]
 tags: [claude, anthropic, legal-tech, processamento-documentos]
 lang: pt-BR
 permalink: /claude-1-milhao-tokens-revolucao-juridica
 image: "/img/claude-1m-tokens.png"
 og_image: "/img/claude-1m-tokens.png"
+categories: [IA & Inovação, Direito Digital]
 ---
 
 ![claude atinge um milhão de tokens](/img/claude-1m-tokens.png)

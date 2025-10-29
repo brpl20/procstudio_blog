@@ -10,8 +10,9 @@ published: true
 tags: ["inteligência artificial", "uso responsável da IA", "comunicação", "advocacia", "programação", "ética na IA", "comportamento", "colaboração", "smartass"]
 lang: pt-br
 permalink: /nao-banque-o-espertinho-com-ia
-image: "/img/nao-banque-o-espertinho-com-ia"
-og_image: "/img/nao-banque-o-espertinho-com-ia"
+image: "/img/nao-banque-o-espertinho-com-ia.png"
+og_image: "/img/nao-banque-o-espertinho-com-ia.png"
+categories: [IA & Inovação, Reflexões & Ensaios]
 ---
 
 ![Um advogado e seu cliente com a sua IA](/img/nao-banque-o-espertinho-com-ia.png)

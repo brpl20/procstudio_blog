@@ -11,6 +11,7 @@ lang: pt-br
 permalink: /airpods-live-translation-bloqueado-ue
 image: "/img/regulamentação-união-europeia.png"
 og_image: "/img/regulamentação-união-europeia.png"
+categories: [IA & Inovação, Privacidade & Vigilância, Casos & Mercado]
 ---
 
 ![Tradução ao Vivo dos AirPods da Apple Bloqueada na União Europeia](/img/regulamentação-união-europeia.png)

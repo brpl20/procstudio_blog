@@ -5,13 +5,15 @@ published: true
 title: "IA - Inteligência Artificial no Contexto do Advogado"
 description: "Descubra como estabelecer o equilíbrio entre a inteligência artificial e o contexto humano na prática jurídica com insights adaptados da análise de Doug Turnbull."
 date: 2025-08-07
-background: 'https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png'
-categories: tecnologia
-categories: blog
+image: https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png
+og_image: https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png
 tags: [inteligência artificial, direito, tecnologia jurídica, advocacia assistida por AI]
 lang: pt-BR
 author: "Bruno Pellizzetti"
+categories: [IA & Inovação, Direito Digital]
 ---
+
+![Encontrando Equilíbrio Entre Contexto Humano e Inteligência Artificial no Direito](https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png)
 
 # Encontrando Equilíbrio Entre Contexto Humano e Inteligência Artificial no Direito
 

@@ -8,8 +8,9 @@ date: 2025-10-07
 published: true
 lang: pt-br
 tags: ["liderança", "equipes", "autoconhecimento", "gestão de pessoas", "comunicação", "crescimento pessoal", "erro e reparação"]
-image: "/img/a-interseccao-entre-administracao-e-familia-2"
-og_image: "/img/a-interseccao-entre-administracao-e-familia-2"
+image: "/img/a-interseccao-entre-administracao-e-familia-2.png"
+og_image: "/img/a-interseccao-entre-administracao-e-familia-2.png"
+categories: [Direito Digital]
 ---
 
 ![consertando um vaso utilizando a técnica Kintsugi](/img/a-interseccao-entre-administracao-e-familia-2.png)

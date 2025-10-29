@@ -6,12 +6,12 @@ keywords: "propriedade digital, dependência de software, privacidade digital, T
 date: 2025-08-28
 author: "Bruno Pellizzetti"
 published: true
-categories: [Tecnologia, Consumo, Privacidade]
 tags: [obsolescência programada, propriedade digital, dependência tecnológica]
 lang: pt-BR
 permalink: /blog/quando-voce-compra-mas-nao-possui/
 image: "/img/demolition_man_obsolescence_article2.png"
 og_image: "/img/demolition_man_obsolescence_article2.png"
+categories: [Privacidade & Vigilância, Reflexões & Ensaios]
 ---
 
 ![LLM Inflation](/img/demolition_man_obsolescence_article2.png)

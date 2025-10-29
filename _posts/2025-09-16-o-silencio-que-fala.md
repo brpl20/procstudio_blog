@@ -11,6 +11,7 @@ tags: [comunicação implícita, atendimento ao cliente, gestão de escritório]
 permalink: /o-silencio-que-fala-quando-esquece-de-responder-o-whatsapp
 image: "/img/o-silencio-que-fala-quando.png"
 og_image: "/img/o-silencio-que-fala-quando.png"
+categories: [Reflexões & Ensaios]
 ---
 
 ![Quando você esquece de responder o Whatsapp](/img/o-silencio-que-fala-quando.png)

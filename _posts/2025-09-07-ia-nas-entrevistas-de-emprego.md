@@ -11,6 +11,7 @@ lang: pt-BR
 permalink: /ia-entrevistas-emprego
 image: "/img/entrevista-de-emprego.png"
 og_image: "/img/entrevista-de-emprego.png"
+categories: [IA & Inovação, Casos & Mercado]
 ---
 
 ![IA nas entrevistas de emprego](/img/entrevista-de-emprego.png)

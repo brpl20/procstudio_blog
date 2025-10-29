@@ -8,9 +8,10 @@ tags: [pdf, forensics, security, manipulation, falsification]
 author: Bruno Pellizzetti
 published: true
 lang: pt-br
-image: "/img/como-analisar-falsificacao-em-pdf"
-og_image: "/img/como-analisar-falsificacao-em-pdf"
+image: "/img/como-analisar-falsificacao-em-pdf.png"
+og_image: "/img/como-analisar-falsificacao-em-pdf.png"
 permalink: "/analisar-falsificacao-em-pdfs/"
+categories: [Segurança Digital, Direito Digital]
 ---
 
 ![documento com alterações sendo investigado](/img/como-analisar-falsificacao-em-pdf.png)

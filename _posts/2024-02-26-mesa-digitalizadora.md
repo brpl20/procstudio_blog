@@ -5,7 +5,7 @@ published: true
 title: "Mesa Digitalizadora CTPS"
 date: 2024-02-26 14:37:43 +0300
 background: '/img/bg-post.jpg'
-categories: tecnologia
+categories: [Reflexões & Ensaios]
 ---
 
 Estou aderindo a nova _trend_ "mostre sua gambiarra" e decidi compartilhar uma das minhas gambis preferidas, rufem os tambores que vem aí a FANTASTICA MESA DIGITALIZADORA: 

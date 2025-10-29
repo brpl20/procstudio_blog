@@ -1,7 +1,9 @@
 // Import Core Clean Blog SCSS
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
 
-
+// ========================================
+// BOTÕES E NAVBAR
+// ========================================
 .btn-primary {
   background-color: #0277EE !important;
   border: none;
@@ -12,42 +14,255 @@
   }
 }
 
-.navbar-toggler{
+.navbar-toggler {
   color: #FEFEFA !important;
-}
-
-.post-preview a{
-    color: #000000de;
-    &:hover {
-    color: #0277EE;
-  }
 }
 
 .navbar {
   background-color: #01013D !important; 
 }
-.nav-link{
+
+.nav-link {
   color: #FEFEFA !important;
 }
 
-.container{
-  height: auto !important;
-}
-
-.row{
-  margin-top: 40px !important;
-}
-nav{
+nav {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
   font-size: 18px;
 }
 
-.clearfix a{
+// ========================================
+// LAYOUT GERAL
+// ========================================
+.container {
+  height: auto !important;
+}
+
+.clearfix a {
   color: #FEFEFA !important;
   text-decoration: none !important;
 }
 
-.post-title{
+// ========================================
+// GRID DE POSTS - CONFIGURAÇÃO PRINCIPAL
+// ========================================
+
+// Row padrão
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px !important;
+}
+
+// Row PRINCIPAL dos posts - usa stretch para igualar alturas
+.container > .row:nth-of-type(2) {
+  align-items: stretch !important; // Isso faz as colunas terem mesma altura
+}
+
+// Row INTERNA dos posts pequenos - sem margin e alinha no topo
+.col-lg-6 > .row {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  align-items: flex-start !important;
+  height: 100%;
+}
+
+// Colunas principais
+.col-lg-6 {
+  display: flex;
+}
+
+.col-lg-6.mb-4 {
+  align-self: stretch; // Estica para preencher altura
+}
+
+.col-md-6.mb-4 {
+  align-self: flex-start;
+}
+
+// ========================================
+// CARDS DOS POSTS
+// ========================================
+.post-preview a {
+  color: #000000de;
+  
+  &:hover {
+    color: #0277EE;
+  }
+}
+
+.post-featured,
+.post-small {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+}
+
+// Card grande ocupa toda altura disponível
+.post-featured {
+  height: 100%;
+  width: 100%;
+}
+
+.post-small {
+  margin-top: 0 !important;
+}
+
+// ========================================
+// IMAGENS
+// ========================================
+.post-thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.post-featured .post-thumb {
+  height: auto;
+  max-height: 350px;
+  border-radius: 0.5rem;
+}
+
+.post-small .post-thumb {
+  height: 140px;
+  border-radius: 0.5rem;
+}
+
+// ========================================
+// TÍTULOS
+// ========================================
+.post-title {
   font-size: 30px !important;
   font-weight: 700 !important;
+}
+
+.post-featured .post-title {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.post-small .post-title {
+  font-size: 16px !important;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+// ========================================
+// DESCRIÇÃO
+// ========================================
+.post-featured .post-description {
+  flex-grow: 1; // Empurra o meta para baixo
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.post-small .post-description {
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+// ========================================
+// META INFO
+// ========================================
+.post-meta {
+  margin-top: auto; // Fica sempre no rodapé
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.post-small .post-meta {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+}
+
+// ========================================
+// RESPONSIVO
+// ========================================
+@media (max-width: 991px) {
+  .post-featured .post-thumb {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .post-featured .post-thumb {
+    max-height: 220px;
+  }
+  
+  .post-small .post-thumb {
+    height: 180px;
+  }
+}
+
+
+.category-section {
+  padding: 2rem 0;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.post-card {
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-card .post-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+.post-card .post-excerpt {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.post-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card a:hover .post-title {
+  color: #007bff;
+}
+
+.post-featured {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Página de Categoria */
+.category-page .post-card {
+  margin-bottom: 2rem;
 }

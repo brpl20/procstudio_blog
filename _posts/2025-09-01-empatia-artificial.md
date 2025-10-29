@@ -6,12 +6,12 @@ keywords: "inteligência artificial, IA, modelos de linguagem, LLM, empatia na I
 date: "2025-09-01"
 author: "Bruno Pellizzetti"
 published: true
-categories: Inteligência Artificial
 tags: [ia, llm, ética, segurança, pesquisa, arxiv, empatia]
 lang: pt-br
 permalink: ia-lambe-saco
 image: "/img/empatia-artificial.png"
 og_image: "/img/empatia-artificial.png"
+categories: [IA & Inovação, Reflexões & Ensaios]
 ---
 
 ![IA lambe saco](/img/empatia-artificial.png)

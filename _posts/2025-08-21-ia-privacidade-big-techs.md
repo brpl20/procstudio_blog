@@ -8,8 +8,8 @@ description: "BigTechs escutam você: desde assistentes de voz até dispositivos
 author: "Bruno Pellizzetti"
 image: /img/ia-privacidade-big-techs.png
 og_image: /img/ia-privacidade-big-techs.png
-categories: [Privacidade, Tecnologia, BigTechs]
 tags: [privacidade digital, espionagem corporativa, segurança de dados]
+categories: [Privacidade & Vigilância]
 ---
 
 ![Bigtechs escutam você, mas não do jeito que você gostaria](/img/ia-privacidade-big-techs.png) 

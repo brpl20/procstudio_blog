@@ -11,6 +11,7 @@ lang: pt-BR
 permalink: /justo-cobrar-mais-usuario
 image: "/img/uber.png"
 og_image: "/img/uber.png"
+categories: [Reflexões & Ensaios]
 ---
 
 ![Uber cobra mais exatamente quando o usuário precisa do serviço](/img/uber.png)

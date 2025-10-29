@@ -2,44 +2,130 @@
 layout: default
 ---
 
-<!-- Page Header -->
 <div class="container">
+  <!-- Seção de Posts Recentes -->
   <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-
+    <div class="col-12">
+      <h1 class="home-title">Posts recentes</h1>
       {{ content }}
-
-      <!-- Home Post List -->
-      {% for post in site.posts limit : 5 %}
-
-      <article class="post-preview">
-        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-          <h2 class="post-title">{{ post.title }}</h2>
-          {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-          {% else %}
-          <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-          {% endif %}
-        </a>
-        <p class="post-meta">Públicado por
-          {% if post.author %}
-          {{ post.author }}
-          {% else %}
-          {{ site.author }}
-          {% endif %}
-          em {% include date_pt.html date=post.date %} &middot; {% include read_time.html content=post.content %}
-        </p>
-      </article>
-
-      <hr>
-
-      {% endfor %}
-
-      <!-- Pager -->
-      <div class="clearfix">
-        <a class="btn btn-primary float-right" href="{{" /posts" | relative_url }}">Ver todas as postagens &rarr;</a>
-      </div>
-
     </div>
   </div>
+
+  <!-- Grid de Posts Recentes -->
+  <div class="row">
+    {% for post in site.posts limit: 5 %}
+      {% if forloop.first %}
+        <div class="col-lg-6 mb-4">
+          <article class="post-preview post-featured h-100">
+            <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+              {% if post.image %}
+              <img class="post-thumb img-fluid mb-3" src="{{ post.image }}" alt="{{ post.title }}">
+              {% endif %}
+              <h2 class="post-title">{{ post.title }}</h2>
+              {% if post.description %}
+              <p class="post-description">{{ post.description | truncatewords: 15 }}</p>
+              {% endif %}
+            </a>
+            <p class="post-meta">Publicado por
+              {% if post.author %}
+              {{ post.author }}
+              {% else %}
+              {{ site.author }}
+              {% endif %}
+              em {% include date_pt.html date=post.date %} &middot; {% include read_time.html content=post.content %}
+            </p>
+          </article>
+        </div>
+
+        <!-- Coluna para os 4 posts menores -->
+        <div class="col-lg-6">
+          <div class="row">
+      {% else %}
+        <!-- Posts Menores (2 por linha) -->
+        <div class="col-md-6 mb-4">
+          <article class="post-preview post-small">
+            <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+              {% if post.image %}
+              <img class="post-thumb img-fluid mb-2" src="{{ post.image }}" alt="{{ post.title }}">
+              {% endif %}
+              <h4 class="post-title">{{ post.title }}</h4>
+              {% if post.description %}
+              <p class="post-description">{{ post.description | truncatewords: 15 }}</p>
+              {% endif %}
+            </a>
+            <p class="post-meta small">
+              {% include date_pt.html date=post.date %}
+            </p>
+          </article>
+        </div>
+
+        {% if forloop.last %}
+          </div> 
+        </div> 
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Seções de Categorias -->
+  {% assign categories_list = "IA & Inovação,Privacidade & Vigilância,Direito Digital,Segurança Digital,Casos & Mercado,Reflexões & Ensaios,Gestão de Escritório" | split: "," %}
+  {% assign categories_slugs = "ia-inovacao,privacidade-vigilancia,direito-digital,seguranca-digital,casos-mercado,reflexoes-ensaios,gestao-de-escritorio" | split: "," %}
+  
+  {% for category_name in categories_list %}
+    {% assign category_posts = site.categories[category_name] %}
+    {% assign category_slug = categories_slugs[forloop.index0] %}
+    
+    {% if category_posts.size > 0 %}
+    <section class="category-section mb-5">
+      <!-- Cabeçalho da Categoria -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="home-title">{{ category_name }}</h2>
+            <a href="{{ '/categorias/' | append: category_slug | append: '/' | relative_url }}" 
+               class="btn btn-primary btn-sm">
+              Ver mais &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posts da Categoria (mesmo estilo dos posts menores) -->
+      <div class="row">
+        {% for post in category_posts limit:4 %}
+        <div class="col-md-6 col-lg-3 mb-4">
+          <article class="post-preview post-small">
+            <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+              {% if post.image %}
+              <img class="post-thumb img-fluid mb-2" src="{{ post.image }}" alt="{{ post.title }}">
+              {% endif %}
+              <h4 class="post-title">{{ post.title }}</h4>
+              {% if post.description %}
+              <p class="post-description">{{ post.description | truncatewords: 15 }}</p>
+              {% endif %}
+            </a>
+            <p class="post-meta small">
+              {% include date_pt.html date=post.date %}
+            </p>
+          </article>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <hr class="my-4">
+    {% endif %}
+  {% endfor %}
+
+  <!-- Botão para ver todas as postagens -->
+  <div class="row">
+    <div class="col-12">
+      <div class="clearfix">
+        <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">Ver todas as postagens &rarr;</a>
+      </div>
+    </div>
+  </div>
+
 </div>

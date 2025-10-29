@@ -6,12 +6,12 @@ keywords: "privacidade digital, proteção de dados, IA, machine learning, dados
 date: 2025-08-22
 author: "Bruno Pellizzetti"
 published: true
-categories: [Privacidade, Tecnologia]
 tags: [privacidade, proteção de dados, inteligência artificial, segurança digital]
 lang: pt-BR
 permalink: /blog/web-nao-esquece
 image: /img/a-web-nao-esquece.png
 og_image: /img/a-web-nao-esquece.png
+categories: [Privacidade & Vigilância, IA & Inovação]
 ---
 
 ![Engenharia de contexto](/img/a-web-nao-esquece.png) 

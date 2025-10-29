@@ -5,7 +5,7 @@ published: false
 title: "Certificado digital para advogado, como escolher?"
 date: 2024-02-04 14:37:43 +0300
 background: '/img/bg-post.jpg'
-categories: tecnologia
+categories: [IA & Inovação, Direito Digital]
 ---
 
 # Certificado digital para advogado, como escolher?

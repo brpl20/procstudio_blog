@@ -8,7 +8,7 @@ description: "Engenharia de Contexto é um novo termo ganhando força na IA: o f
 author: "Bruno Pellizzetti"
 image: /img/engenharia-de-contexto.png
 og_image: /img/engenharia-de-contexto.png
-categories: [IA, Agentes]
+categories: [IA & Inovação]
 tags: [engenharia de contexto, prompting, RAG, agentes]
 ---
 

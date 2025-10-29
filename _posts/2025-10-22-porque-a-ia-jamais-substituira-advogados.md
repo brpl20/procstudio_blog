@@ -9,8 +9,9 @@ published: true
 tags: [IA, Direito, Legal Tech, Advocacia Digital]
 lang: pt-BR
 permalink: /blog/ia-jamais-substituira-advogados
-image: "/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro"
-og_image: "/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro"
+image: "/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro.png"
+og_image: "/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro.png"
+categories: [IA & Inovação, Direito Digital]
 ---
 
 ![advogado e radiolosgista](/img/por-que-a-ia-jamais-substituira-advogados-licoes-da-radiologia-para-o-direito-brasileiro.png)

@@ -9,8 +9,9 @@ published: true
 tags: ["ia", "desenvolvimento", "produto", "paradigma", "dados", "legaltech"]
 lang: pt-br
 permalink: /blog/construindo-produtos-ia-era-probabilistica
-image: "/img/era-probabilística"
-og_image: "/img/era-probabilística"
+image: "/img/era-probabilística.png"
+og_image: "/img/era-probabilística.png"
+categories: [IA & Inovação]
 ---
 
 ![Robô dando aula de probabilistica](/img/era-probabilística.png)

@@ -6,12 +6,12 @@ keywords: "modelos de IA abertos, GPT-OSS, OpenAI, LLaMA, Falcon, IA gratuita, i
 date: 2025-08-25
 author: "Bruno Pellizzetti"
 published: true
-categories: Inteligência Artificial, Tecnologia, Modelos de IA
 tags: IA aberta, OpenAI, LLaMA, No-crawl, Falcon, Hugging Face, Ollama, GPT-OSS
 lang: pt
 permalink: /blog/modelos-ia-abertos
 image: /img/open-source-ia.png
 og_image: /img/open-source-ia.png
+categories: [IA & Inovação]
 ---
 
 ![Modelos de IA Abertos](/img/open-source-ia.png) 

@@ -11,6 +11,7 @@ lang: "pt-br"
 permalink: /google-reducao-custo-energetico-ia/
 image: "/img/google-reduz-custo-energetico.png"
 og_image: "/img/google-reduz-custo-energetico.png"
+categories: [IA & Inovação, Casos & Mercado]
 ---
 
 ![Google e o Custo Energético da IA](/img/google-reduz-custo-energetico.png)

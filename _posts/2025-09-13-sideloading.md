@@ -10,6 +10,7 @@ published: true
 permalink: /dependencia-digital-google-e-apple-e-a-erosao-da-nossa-liberdade-digital
 image: "/img/sideloading.png"
 og_image: "/img/sideloading.png"
+categories: [Privacidade & Vigilância, Reflexões & Ensaios]
 ---
 
 ![A Dependência Digital](/img/sideloading.png)

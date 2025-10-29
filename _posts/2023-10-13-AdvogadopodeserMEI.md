@@ -4,7 +4,7 @@ layout: post
 title: "Advogado Pode Ser MEI?"
 date: 2023-10-13 14:37:43 +0300
 background: '/img/bg-post.jpg'
-categories: contabil
+categories: [Gestão de Escritório]
 ---
 
 # Advogado pode ser MEI ?

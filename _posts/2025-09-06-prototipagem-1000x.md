@@ -11,6 +11,7 @@ lang: pt-BR
 permalink: /prototipagem-revolucionando-o-design-produtos-digitais-com-ia
 image: "/img/prototipagem1000x.png"
 og_image: "/img/prototipagem1000x.png"
+categories: [IA & Inovação]
 ---
 
 ![Prototipagem 1000x](/img/prototipagem1000x.png)

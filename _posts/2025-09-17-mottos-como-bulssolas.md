@@ -11,6 +11,7 @@ description: "Explore como mottos pessoais e éticos podem orientar decisões na
 keywords: ["mottos pessoais", "ética na advocacia", "desenvolvimento de software", "direito e tecnologia", "ProcStudio", "princípios éticos", "gestão de escritório de advocacia"]
 image: "/img/motto-blogpost.png"
 og_image: "/img/motto-blogpost.png"
+categories: [Reflexões & Ensaios, Direito Digital]
 ---
 
 ![Mottos Entre o Código e o Direito](/img/motto-blogpost.png)

@@ -8,8 +8,9 @@ date: 2025-10-15
 published: true
 lang: pt-br
 tags: ["inteligência artificial", "IA jurídica", "RAG", "documentação clara", "produtividade", "advocacia digital", "automação jurídica", "tecnologia no direito"]
-image: "/img/writing-documentation-to-ai"
-og_image: "/img/writing-documentation-to-ai"
+image: "/img/writing-documentation-to-ai.png"
+og_image: "/img/writing-documentation-to-ai.png"
+categories: [IA & Inovação]
 ---
 
 ![Mesa bagunçada com um computador, documentos e um café em cima da mesa](/img/writing-documentation-to-ai.png)

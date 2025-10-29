@@ -8,8 +8,9 @@ date: 2025-10-08
 published: true
 lang: pt-br
 tags: ["privacidade", "vigilância", "ética", "IA", "tecnologia", "direitos digitais", "liberdade individual"]
-image: "/img/experimento-artistico-expoe-nossa-vulnerabilidade-frente-ao-reconhecimento-facial"
-og_image: "/img/experimento-artistico-expoe-nossa-vulnerabilidade-frente-ao-reconhecimento-facial"
+image: "/img/experimento-artistico-expoe-nossa-vulnerabilidade-frente-ao-reconhecimento-facial.png"
+og_image: "/img/experimento-artistico-expoe-nossa-vulnerabilidade-frente-ao-reconhecimento-facial.png"
+categories: [Privacidade & Vigilância]
 ---
 
 ![Show Massive Attack](/img/experimento-artistico-expoe-nossa-vulnerabilidade-frente-ao-reconhecimento-facial.png)

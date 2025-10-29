@@ -11,6 +11,7 @@ lang: pt-br
 permalink: /llm-como-enciclopedia-com-perdas
 image: "/img/llm-como-uma-enciclopedia-com-perdas.png"
 og_image: "/img/llm-como-uma-enciclopedia-com-perdas.png"
+categories: [IA & Inovação, Reflexões & Ensaios]
 ---
 
 ![LLM como uma Enciclopédia com Perdas](/img/llm-como-uma-enciclopedia-com-perdas.png)

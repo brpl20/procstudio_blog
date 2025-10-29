@@ -1,0 +1,41 @@
+---
+layout: page
+title: "IA & Inovação"
+permalink: /categorias/ia-inovacao/
+description: "Artigos sobre Inteligência Artificial aplicada ao Direito"
+---
+
+<div class="category-page">
+  <h1 class="mb-4">{{ page.title }}</h1>
+  {% if page.description %}
+  <p class="lead mb-5">{{ page.description }}</p>
+  {% endif %}
+
+  <div class="row">
+    {% assign posts = site.categories['IA & Inovação'] %}
+    {% if posts.size > 0 %}
+      {% for post in posts %}
+      <div class="col-md-6 mb-4">
+        <article class="post-preview post-small">
+          <a href="{{ post.url | relative_url }}">
+            {% if post.image %}
+            <img class="post-thumb img-fluid mb-2" src="{{ post.image }}" alt="{{ post.title }}">
+            {% endif %}
+            <h4 class="post-title">{{ post.title }}</h4>
+            {% if post.description %}
+            <p class="post-description">{{ post.description | truncatewords: 15 }}</p>
+            {% endif %}
+          </a>
+          <p class="post-meta small">
+            {% include date_pt.html date=post.date %}
+          </p>
+        </article>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="col-12">
+        <p class="text-muted">Nenhum post encontrado nesta categoria.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

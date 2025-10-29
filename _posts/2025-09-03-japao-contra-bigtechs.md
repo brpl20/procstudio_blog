@@ -11,6 +11,7 @@ lang: pt-BR
 permalink: /japao-eleva-o-tom-contra-bigtechs
 image: "/img/japan.png"
 og_image: "/img/japan.png"
+categories: [Privacidade & Vigilância, Casos & Mercado]
 ---
 
 ![Japão contra bigtechs](/img/japan.png)

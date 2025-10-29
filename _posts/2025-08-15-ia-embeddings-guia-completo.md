@@ -6,7 +6,7 @@ title: "Embeddings de IA: O Guia Completo para Iniciantes em 2025"
 description: "Descubra o que são embeddings de inteligência artificial, como funcionam e por que são fundamentais para chatbots, sistemas de busca e outras aplicações de IA"
 keywords: "embeddings ia, inteligencia artificial, machine learning, processamento linguagem natural, chatbots, Word2Vec, BERT, transformers"
 date: 2025-08-15
-categories: [Inteligência Artificial, Machine Learning, Tecnologia]
+categories: [IA & Inovação]
 tags: [embeddings, ia, nlp, deep learning, python, chatbots]
 lang: pt-BR
 author: "Bruno Pellizzetti"

@@ -7,7 +7,7 @@ keywords: "hud jurídico, inteligência artificial direito, legal tech, document
 date: 2025-08-19
 author: "Bruno Pellizzetti"
 published: true
-categories: [Legal Tech, Inteligência Artificial, Inovação Jurídica,Direito Digital]
+categories: [IA & Inovação, Direito Digital]
 tags: [hud, ai, direito, documentação jurídica, interface, legal tech, contratos, inovação, acessibilidade jurídica, jurisprudência, juiz virtual]
 image: https://lztforeferfiles.s3.amazonaws.com/prc-ai-hud.png
 og_image: https://lztforeferfiles.s3.amazonaws.com/prc-ai-hud.png

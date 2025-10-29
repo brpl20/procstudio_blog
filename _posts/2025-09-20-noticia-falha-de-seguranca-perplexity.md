@@ -11,6 +11,7 @@ lang: pt-br
 permalink: /seguranca-ia-agentica-injecao-prompt-indireta/
 image: "/img/noticia-falha-de-seguranca-perplexity.png"
 og_image: "/img/noticia-falha-de-seguranca-perplexity.png"
+categories: [Segurança Digital, IA & Inovação]
 ---
 
 ![A Nova Ameaça à Segurança na Era das IAs Agentícas](/img/noticia-falha-de-seguranca-perplexity.png)

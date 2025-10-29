@@ -11,6 +11,7 @@ lang: pt-br
 permalink: /transparencia-benchmarks-ia-compliance
 image: "/img/ia-cheater.png"
 og_image: "/img/ia-cheater.png"
+categories: [IA & Inovação, Direito Digital]
 ---
 
 ![IAs trapaceando para melhorar seu benchmark na plataforma](/img/ia-cheater.png)

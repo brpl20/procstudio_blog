@@ -5,7 +5,7 @@ published: true
 title: "O Paradoxo da Alavancagem Tecnológica: Por Que Tudo Parece Estar Desmoronando no Mundo Jurídico"
 description: "Como a diferença de velocidade entre inovação tecnológica e adaptação institucional está transformando o direito e nossa sociedade"
 date: 2025-08-17
-categories: [tecnologia, direito-digital, inteligencia-artificial]
+categories: [Direito Digital, Reflexões & Ensaios]
 tags: [IA, legaltech, advocacia, transformacao-digital, jurimetria]
 lang: pt-BR
 author: "Bruno Pellizzetti"

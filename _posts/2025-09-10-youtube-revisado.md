@@ -9,6 +9,7 @@ description: "O escândalo da edição automática de vídeos pelo YouTube sem c
 image: "/img/youtube-revisado.png"
 og_image: "/img/youtube-revisado.png"
 permalink: /licoes-do-caso-youtube-para-legal-tech
+categories: [IA & Inovação, Privacidade & Vigilância, Direito Digital]
 ---
 
 ![IA Transparente vs Manipulação Silenciosa](/img/youtube-revisado.png)

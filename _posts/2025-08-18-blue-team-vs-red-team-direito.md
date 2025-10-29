@@ -6,7 +6,7 @@ keywords: "inteligência artificial direito, legal tech, red team blue team, IA 
 date: 2025-08-18
 author: "Bruno Pellizzetti"
 published: true
-categories: [Legal Tech, Inteligência Artificial]
+categories: [IA & Inovação, Direito Digital, Segurança Digital]
 tags: [IA, Direito, Red Team, Blue Team, Legal Tech, Automação]
 lang: pt-BR
 permalink: /blog/red-team-blue-team-ia-juridica

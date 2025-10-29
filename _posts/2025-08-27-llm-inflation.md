@@ -6,12 +6,12 @@ keywords: "LLM Inflation, Inteligência Artificial, Modelos de Linguagem, Tecnol
 date: 2025-08-27
 author: "Bruno Pellizzetti"
 published: true
-categories: [Tecnologia, Inteligência Artificial]
 tags: [LLM, Comunicação, Transformação Digital]
 lang: pt-BR
 permalink: /blog/llminflation/
 image: "/img/llm-inflation.png"
 og_image: "/img/llm-inflation.png"
+categories: [IA & Inovação]
 ---
 
 ![LLM Inflation](/img/llm-inflation.png)

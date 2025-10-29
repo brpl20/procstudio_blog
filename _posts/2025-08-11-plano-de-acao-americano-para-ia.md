@@ -2,17 +2,19 @@
 permalink: /plano-de-acao-americano-para-ia
 layout: post
 published: false
-title: "Estados Unidos Lanca Plano de Acao Estrategico para IA"
-description: "Estados Unidos Lanca Plano de Acao Estrategico para dominar o mercado de Inteligência Artificial, o recado é claro: Build baby, BUILD!!!"
+title: "EUA Lança Plano Estratégico de IA: Análise Completa do 'America's AI Action Plan'"
+description: "Estados Unidos Lança Plano de Ação Estratégico para dominar o mercado de Inteligência Artificial, o recado é claro: Build baby, BUILD!!!"
 keywords: "politica internaciona, inteligencia artificial"
 date: 2025-08-11
 categories: [Inteligência Artificial, Machine Learning, Tecnologia]
 tags: [embeddings, ia, nlp, deep learning, python, chatbots]
-# background: 'https://lztforeferfiles.s3.amazonaws.com/ia-contexto-background-c.png'
-# featured_image: "/assets/images/hud-juridico-cover.jpg"
+image: /img/eua-plano-estrategico-de-ia.png
+og_image: /img/eua-plano-estrategico-de-ia.png
 lang: pt-BR
 author: "Bruno Pellizzetti"
 ---
+
+![Análise Completa do "America's AI Action Plan](/img/eua-plano-estrategico-de-ia.png)
 
 # EUA Lança Plano Estratégico de IA: Análise Completa do "America's AI Action Plan"
 
