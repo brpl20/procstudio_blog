@@ -1,7 +1,7 @@
 ---
 permalink: /como-fazer-controle-financeiro-do-escritório-de-advocacia
 layout: post
-title: "Como elaborar uma petição inicial??"
+title: "Como fazer controle financeiro do escritório de advocacia?"
 date: 2023-10-13 14:37:43 +0300
 background: '/img/bg-post.jpg'
 categories: [Gestão de Escritório]
