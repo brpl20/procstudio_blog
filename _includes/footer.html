@@ -1,75 +1,95 @@
 <!-- Footer -->
-
-<hr>
-
-<footer>
+<footer class="footer-modern">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          {% if site.email %}
-          <li class="list-inline-item">
-            <a href="mailto:{{ site.email | encode_email }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
+    <!-- Main Footer Content -->
+    <div class="row py-5">
+
+      <!-- Sobre / Logo -->
+      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+         <img src="{{ site.logo | relative_url }}" alt="Logo" style="height: 55px;">
+        <p class="footer-text">
+           Onde tecnologia e direito se encontram para criar o futuro.
+        </p>
+        {% if site.email %}
+        <p class="footer-contact">
+          <i class="fas fa-envelope me-2"></i>
+          <a href="mailto:{{ site.email | encode_email }}">{{ site.email }}</a>
+        </p>
+        {% endif %}
+      </div>
+
+      <!-- Links Rápidos -->
+      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+        <h5 class="footer-heading">Navegação</h5>
+        <ul class="footer-links">
+          <li><a href="{{ '/' | relative_url }}">Início</a></li>
+          <li><a href="{{ '/posts' | relative_url }}">Todos os Posts</a></li>
+          <li><a href="{{ '/about' | relative_url }}">Sobre</a></li>
+        </ul>
+      </div>
+
+      <!-- Categorias Populares -->
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <h5 class="footer-heading">Categorias</h5>
+        <ul class="footer-links">
+          <li><a href="{{ '/categorias/ia-inovacao/' | relative_url }}">IA & Inovação</a></li>
+          <li><a href="{{ '/categorias/privacidade-vigilancia/' | relative_url }}">Privacidade & Vigilância</a></li>
+          <li><a href="{{ '/categorias/direito-digital/' | relative_url }}">Direito Digital</a></li>
+          <li><a href="{{ '/categorias/gestao-de-escritorio/' | relative_url }}">Gestão de Escritório</a></li>
+          <li><a href="{{ '/categorias/reflexoes-e-ensaios/' | relative_url }}">Reflexões & Ensaios</a></li>
+          <li><a href="{{ '/categorias/seguranca-digital/' | relative_url }}">Segurança Digital</a></li>
+          <li><a href="{{ '/categorias/casos-e-mercado/' | relative_url }}">Casos & Mercado</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes Sociais & Newsletter -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Conecte-se</h5>
+        <p class="footer-text mb-3">Siga nas redes sociais para ficar atualizado</p>
+
+        <!-- Social Icons -->
+        <div class="social-icons mb-4">
           {% if site.twitter_username %}
-          <li class="list-inline-item">
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-          {% if site.facebook_username %}
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/{{ site.facebook_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
+          <a href="https://twitter.com/{{ site.twitter_username }}" class="social-icon" aria-label="Twitter"
+            target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
           {% endif %}
           {% if site.linkedin_username %}
-          <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
+          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="social-icon" aria-label="LinkedIn"
+            target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
           {% endif %}
           {% if site.github_username %}
-          <li class="list-inline-item">
-            <a href="https://github.com/{{ site.github_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
+          <a href="https://github.com/{{ site.github_username }}" class="social-icon" aria-label="GitHub"
+            target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
           {% endif %}
           {% if site.instagram_username %}
-          <li class="list-inline-item">
-            <a href="https://instagram.com/{{ site.instagram_username }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
+          <a href="https://instagram.com/{{ site.instagram_username }}" class="social-icon" aria-label="Instagram"
+            target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
           {% endif %}
-        </ul>
-        <p class="copyright text-muted">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }}</p>
+          {% if site.facebook_username %}
+          <a href="https://www.facebook.com/{{ site.facebook_username }}" class="social-icon" aria-label="Facebook"
+            target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="text-center mb-3">
+        <p class="mb-0">
+          &copy; {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}. Todos os direitos reservados.
+        </p>
       </div>
     </div>
-  </div>
 </footer>
