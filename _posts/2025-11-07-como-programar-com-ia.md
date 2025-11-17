@@ -3,7 +3,7 @@ layout: post
 title: "Como Programar com IA"
 description: "Um guia prático e reflexivo sobre como usar Inteligência Artificial no desenvolvimento de software — incluindo ferramentas como Claude Code, GPT-5, Zed e estratégias reais de produtividade com IA."
 keywords: IA para programadores, programar com inteligência artificial, Claude Code, GPT-5, IA no desenvolvimento, melhores práticas com IA, automatização de código, ferramentas de IA para devs
-date: 2025-11-07
+date: 2025-11-17
 author: "Bruno Pellizzetti"
 published: true
 tags: [IA, Direito, Legal Tech, Advocacia Digital]
