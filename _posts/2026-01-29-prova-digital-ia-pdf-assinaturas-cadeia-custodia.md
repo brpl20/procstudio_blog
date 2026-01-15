@@ -5,7 +5,7 @@ description: "Guia tecnico de prova digital no escritorio juridico: verificacao 
 keywords: "prova digital, PDF forense, assinatura digital, cadeia de custodia, hash, metadados PDF, IA no direito"
 date: 2026-01-29
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [Seguranca Digital, Forense, IA, Direito Digital]
 lang: pt-br
 permalink: /prova-digital-ia-pdf-assinaturas-cadeia-custodia/

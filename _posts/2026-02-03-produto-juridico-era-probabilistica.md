@@ -5,7 +5,7 @@ description: "Como projetar produtos e rotinas juridicas com IA em um ambiente p
 keywords: "produto juridico, era probabilistica, MVI, guardrails, tolerancia a erro, IA no direito, legal tech"
 date: 2026-02-03
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [IA, Produto, Legal Tech, Processo]
 lang: pt-br
 permalink: /produto-juridico-era-probabilistica/

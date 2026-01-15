@@ -5,7 +5,7 @@ description: "Guia tecnico para avaliar modelos de IA no direito: diferenca entr
 keywords: "benchmarks de IA, avaliacao de modelos juridicos, testes internos IA, metricas de qualidade, IA no direito, legal tech"
 date: 2026-01-22
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [IA, Benchmarks, Avaliacao, Advocacia Digital]
 lang: pt-br
 permalink: /benchmarks-ia-avaliacao-modelos-juridicos/

@@ -5,7 +5,7 @@ description: "Visao tecnica de privacidade para IA juridica: bases legais, dados
 keywords: "privacidade IA juridica, AI Act, GDPR, LGPD, dados sensiveis, DPIA, compliance, advocacia digital"
 date: 2026-01-27
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [Privacidade, IA, LGPD, Compliance]
 lang: pt-br
 permalink: /privacidade-ia-juridica-ai-act-gdpr-lgpd/

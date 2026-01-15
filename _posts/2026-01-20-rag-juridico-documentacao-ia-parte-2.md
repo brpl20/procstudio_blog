@@ -5,7 +5,7 @@ description: "Parte 2 tecnica sobre RAG juridico: chunking, metadados, taxonomia
 keywords: "RAG juridico, documentacao para IA, chunking, metadados, taxonomia juridica, base de conhecimento, recuperacao de informacao"
 date: 2026-01-20
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [IA, RAG, Documentacao, Advocacia Digital]
 lang: pt-br
 permalink: /rag-juridico-documentacao-ia-parte-2/

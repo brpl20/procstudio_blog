@@ -5,7 +5,7 @@ description: "Guia tecnico para uso responsavel de IA no escritorio juridico, co
 keywords: "IA no escritorio juridico, uso responsavel de IA, controle de qualidade IA, revisao humana, alucinacoes IA, advocacia digital, legal tech, produtividade juridica"
 date: 2026-01-13
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [IA, Advocacia Digital, Legal Tech, Produtividade]
 lang: pt-br
 permalink: /ia-escritorio-juridico-uso-responsavel-controle-qualidade/

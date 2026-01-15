@@ -5,7 +5,7 @@ description: "Estrutura tecnica de governanca e compliance para IA no escritorio
 keywords: "governanca de IA, compliance IA advocacia, politicas internas IA, auditoria IA, logs de uso, legal tech, LGPD"
 date: 2026-01-15
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [IA, Compliance, Governanca, Advocacia Digital]
 lang: pt-br
 permalink: /governanca-compliance-ia-escritorio-advocacia/

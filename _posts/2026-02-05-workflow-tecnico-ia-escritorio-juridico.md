@@ -5,7 +5,7 @@ description: "Fluxo completo de uso de IA no escritorio juridico: intake de caso
 keywords: "workflow IA escritorio juridico, fluxo de trabalho IA, prompts juridicos, base de conhecimento, revisao humana, indicadores de qualidade"
 date: 2026-02-05
 author: "Bruno Pellizzetti"
-published: true
+published: false
 tags: [IA, Workflow, Produtividade, Advocacia Digital]
 lang: pt-br
 permalink: /workflow-tecnico-ia-escritorio-juridico/
